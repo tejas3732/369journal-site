@@ -1,0 +1,16 @@
+# After each GitHub Pages publish, tell Bing (via IndexNow) to re-read the site.
+name: IndexNow ping
+
+on:
+  page_build:
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for the new version to be live
+        run: sleep 60
+      - name: Ping IndexNow
+        run: bash scripts/indexnow.sh
