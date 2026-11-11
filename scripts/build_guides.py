@@ -381,12 +381,102 @@ PAGES.append({
 })
 
 
+ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>'
+
+
+def guide_rows(items):
+    return "\n".join(
+        f'        <a class="guide" href="{h}"><strong>{t}</strong><span>{d}</span>{ARROW}</a>' for h, t, d in items
+    )
+
+
+def hub():
+    import layout  # noqa: E402  (same folder)
+    start = [g for g in layout.GUIDES if g[0] in ("/369-method/", "/369-method/examples/", "/369-method/tracker/")]
+    goals = [g for g in layout.GUIDES if g[0] in ("/369-method/money/", "/369-method/love/")]
+    compare = [g for g in layout.GUIDES if g[0] in ("/369-method/vs-55x5/", "/best-369-method-apps/")]
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "369 method guides",
+        "url": f"{SITE}/guides/",
+        "hasPart": [{"@type": "WebPage", "name": t, "url": f"{SITE}{h}"} for h, t, _ in layout.GUIDES],
+    }
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>369 method guides: how to, examples, money, love | 369 Journal</title>
+  <meta name="description" content="Every 369 Journal guide in one place: how to do the 369 method, 50 affirmation examples, the 369 method for money and love, 369 vs 55x5, a free printable tracker and an honest app comparison.">
+  <link rel="canonical" href="{SITE}/guides/">
+  <meta name="theme-color" content="#faf6f0">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="369 Journal">
+  <meta property="og:title" content="369 method guides">
+  <meta property="og:description" content="How to do the 369 method, examples, money, love and more.">
+  <meta property="og:url" content="{SITE}/guides/">
+  <meta property="og:image" content="{SITE}/assets/img/og.jpg">
+  <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">
+{json.dumps(ld, indent=2, ensure_ascii=False)}
+  </script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+{HEADER}
+
+  <main>
+    <div class="narrow article-head">
+      <h1>369 method guides</h1>
+      <p>Everything you need to practice the 369 manifestation method: how to start, what to write, how to use it for money or love, and free tools.</p>
+    </div>
+    <div class="narrow prose">
+      <h2 style="margin-top:0">Start here</h2>
+      <div class="guides" style="grid-template-columns:1fr">
+{guide_rows(start)}
+      </div>
+      <h2>For your goal</h2>
+      <div class="guides" style="grid-template-columns:1fr">
+{guide_rows(goals)}
+      </div>
+      <h2>Compare</h2>
+      <div class="guides" style="grid-template-columns:1fr">
+{guide_rows(compare)}
+      </div>
+      <div class="app-plug" style="margin-top:3rem">
+        <img src="/assets/img/app-icon-512.png" alt="369 Journal app icon" width="64" height="64">
+        <div>
+          <h3>Practice with reminders</h3>
+          <p>369 Journal reminds you morning, afternoon and night and counts every line.</p>
+        </div>
+        <a class="btn clay" href="{APP_LINK.format(ct='site-guides')}" data-cta="site-guides">Download free</a>
+      </div>
+    </div>
+  </main>
+
+{FOOTER}
+</body>
+</html>
+"""
+
+
 def main():
+    import sys
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
     for p in PAGES:
         out = ROOT / p["path"].strip("/") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(page(p))
         print("wrote", out.relative_to(ROOT))
+    out = ROOT / "guides" / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(hub())
+    print("wrote", out.relative_to(ROOT))
+    import layout
+    layout.main()
 
 
 if __name__ == "__main__":

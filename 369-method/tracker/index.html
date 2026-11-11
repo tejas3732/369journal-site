@@ -43,18 +43,32 @@
     .print-foot { display:none; }
   </style>
   <script src="/assets/analytics.js" defer></script>
+  <script src="/assets/site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="/"><img src="/assets/img/favicon-48.png" alt="" width="32" height="32">369 Journal</a>
+      <a class="brand" href="/"><img src="/assets/img/favicon-48.png" alt="" width="34" height="34">369 Journal</a>
       <nav class="nav" aria-label="Main">
         <a href="/369-method/">The 369 method</a>
+        <details>
+          <summary>Guides <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
+          <div class="menu">
+            <a href="/369-method/"><strong>How to do the 369 method</strong><span>Step by step, with 21, 33 or 45 days</span></a>
+            <a href="/369-method/examples/"><strong>50 369 method examples</strong><span>Affirmations to copy for every area of life</span></a>
+            <a href="/369-method/money/"><strong>369 method for money</strong><span>Wording, 15 money affirmations, daily action</span></a>
+            <a href="/369-method/love/"><strong>369 method for love</strong><span>Self-love, a relationship or a specific person</span></a>
+            <a href="/369-method/vs-55x5/"><strong>369 vs 55x5 method</strong><span>Which manifestation ritual suits you</span></a>
+            <a href="/369-method/tracker/"><strong>Free 33-day tracker</strong><span>Printable sheet for paper journaling</span></a>
+            <a href="/best-369-method-apps/"><strong>Best 369 method apps</strong><span>An honest comparison for iPhone</span></a>
+            <a class="all" href="/guides/">All guides &rarr;</a>
+          </div>
+        </details>
         <a href="/369-method/tracker/" aria-current="page">Free tracker</a>
-        <a href="/best-369-method-apps/">Best 369 apps</a>
         <a href="/faq/">FAQ</a>
       </nav>
-      <a class="btn" href="https://apps.apple.com/app/apple-store/id6770804298?pt=128923117&amp;ct=site-header&amp;mt=8" data-cta="header">Get the app</a>
+      <a class="mobile-guides" href="/guides/">Guides</a>
+      <div class="header-cta"><a class="store-badge small" href="https://apps.apple.com/app/apple-store/id6770804298?pt=128923117&amp;ct=site-header&amp;mt=8" data-cta="header" aria-label="Download 369 Journal on the App Store"><img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54"></a></div>
     </div>
   </header>
 
@@ -63,7 +77,7 @@
       <h1>Free printable 369 method tracker</h1>
       <p>Thirty-three days of the 369 method on one page. Write your desire at the top, then fill one circle each time you write it: 3 in the morning, 6 in the afternoon and 9 at night.</p>
       <div class="tracker-intro print-hide">
-        <button class="btn clay" type="button" onclick="window.print(); window.posthog && posthog.capture('website tracker printed')">Print or save as PDF</button>
+        <button class="btn" type="button" onclick="window.print(); window.posthog && posthog.capture('website tracker printed')">Print or save as PDF</button>
         <a href="/369-method/">How to do the 369 method</a>
       </div>
     </div>
@@ -120,30 +134,57 @@
 
     <section class="narrow print-hide" style="margin-bottom:4rem">
       <div class="app-plug">
-        <img src="/assets/img/app-icon-512.png" alt="369 Journal app icon" width="64" height="64">
+        <img class="icon" src="/assets/img/app-icon-512.png" alt="369 Journal app icon" width="64" height="64">
         <div>
           <h3>Rather not print?</h3>
           <p>369 Journal reminds you morning, afternoon and night, counts every line and keeps your cycle map for you.</p>
         </div>
-        <a class="btn clay" href="https://apps.apple.com/app/apple-store/id6770804298?pt=128923117&amp;ct=site-tracker&amp;mt=8" data-cta="tracker">Download free</a>
+        <a class="store-badge" href="https://apps.apple.com/app/apple-store/id6770804298?pt=128923117&amp;ct=site-tracker&amp;mt=8" data-cta="tracker" aria-label="Download 369 Journal on the App Store"><img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54"></a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>369 Journal for iPhone and iPad. &copy; 2026</p>
-      <nav aria-label="Footer">
-        <a href="/369-method/">The 369 method</a>
-        <a href="/369-method/tracker/">Free 33-day tracker</a>
-        <a href="/369-method/examples/">369 examples</a>
-        <a href="/best-369-method-apps/">Best 369 apps</a>
-        <a href="/faq/">FAQ</a>
-        <a href="/about/">About</a>
-        <a href="https://tejas3732.github.io/369-journal-legal/privacy.html">Privacy</a>
-        <a href="https://tejas3732.github.io/369-journal-legal/support.html">Support</a>
+      <div class="foot-brand">
+        <a class="brand" href="/"><img src="/assets/img/favicon-48.png" alt="" width="34" height="34">369 Journal</a>
+        <p>A calm, private journal for the 369 manifestation method, on iPhone and iPad.</p>
+        <a class="store-badge medium" href="https://apps.apple.com/app/apple-store/id6770804298?pt=128923117&amp;ct=site-footer&amp;mt=8" data-cta="footer" aria-label="Download 369 Journal on the App Store"><img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54"></a>
+      </div>
+      <nav aria-label="Guides">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="/369-method/">How to do the 369 method</a></li>
+          <li><a href="/369-method/examples/">50 369 method examples</a></li>
+          <li><a href="/369-method/money/">369 method for money</a></li>
+          <li><a href="/369-method/love/">369 method for love</a></li>
+          <li><a href="/369-method/vs-55x5/">369 vs 55x5 method</a></li>
+          <li><a href="/guides/">All guides</a></li>
+        </ul>
       </nav>
+      <nav aria-label="Free tools">
+        <h2>Free tools</h2>
+        <ul>
+          <li><a href="/369-method/tracker/">33-day tracker</a></li>
+          <li><a href="/best-369-method-apps/">Best 369 apps</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="About">
+        <h2>369 Journal</h2>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://tejas3732.github.io/369-journal-legal/support.html">Support</a></li>
+          <li><a href="https://tejas3732.github.io/369-journal-legal/privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+      <p class="copyright">&copy; 2026 369 Journal. Apple, the Apple logo and App Store are trademarks of Apple Inc.</p>
     </div>
   </footer>
+  <div class="sticky-get" data-sticky>
+    <img class="icon" src="/assets/img/apple-touch-icon.png" alt="" width="40" height="40">
+    <div><strong>369 Journal</strong><span>Free on iPhone &middot; 7-day Pro trial</span></div>
+    <a class="store-badge" href="https://apps.apple.com/app/apple-store/id6770804298?pt=128923117&amp;ct=site-sticky&amp;mt=8" data-cta="sticky" aria-label="Download 369 Journal on the App Store"><img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54"></a>
+  </div><!-- /sticky -->
 </body>
 </html>
