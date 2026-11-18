@@ -1,0 +1,53 @@
+/* Word of the Year finder */
+.woty-quiz { position: relative; }
+.woty-progress { height: 4px; border-radius: 999px; background: rgba(28, 24, 20, 0.08); overflow: hidden; margin: 0 0 1.4rem; }
+.woty-progress i { display: block; height: 100%; width: 0; background: var(--clay); border-radius: inherit; transition: width 320ms var(--ease); }
+.woty-count { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--clay-ink); margin: 0 0 0.5rem; }
+.woty-q { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.05rem); line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 1.3rem; outline: none; text-wrap: balance; }
+.woty-opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
+.woty-opt { text-align: left; font: 500 1rem/1.35 var(--sans); color: var(--ink); background: var(--paper); border: 1px solid rgba(28, 24, 20, 0.14); border-radius: 16px; padding: 1.05rem 1.1rem; min-height: 4.2rem; cursor: pointer; transition: border-color 160ms var(--ease), background-color 160ms var(--ease), transform 160ms var(--ease); }
+.woty-opt:hover { border-color: var(--clay); transform: translateY(-1px); }
+.woty-opt:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+.woty-opt[aria-pressed="true"] { border-color: var(--ink); background: var(--surface); box-shadow: inset 0 0 0 1px var(--ink); }
+.woty-quiz-foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.1rem; min-height: 1.6rem; }
+.woty-quiz.swap .woty-q, .woty-quiz.swap .woty-opts { animation: woty-in 280ms var(--ease) both; }
+.woty-quiz.swap .woty-opts { animation-delay: 40ms; }
+@keyframes woty-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.woty-result { display: grid; gap: 1.1rem; }
+.woty-word-label { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--clay-ink); margin: 0; }
+.woty-word { font-family: var(--serif); font-weight: 600; font-size: clamp(3rem, 8vw, 4.6rem); line-height: 1; letter-spacing: -0.03em; color: var(--ink); margin: 0.2rem 0 0; outline: none; animation: woty-in 360ms var(--ease) both; }
+.woty-meaning { font-size: 1.08rem; color: var(--ink-soft); margin: 0.5rem 0 0; }
+.woty-rows { display: grid; gap: 0.7rem; margin: 0; }
+.woty-rows div { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 0.85rem 1rem; }
+.woty-rows dt { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.25rem; }
+.woty-rows dd { margin: 0; color: var(--ink); }
+.woty-rows .aff dd { font-family: var(--serif); font-size: 1.1rem; }
+.woty-alts { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.woty-alt, .woty-chip { font: 500 0.9rem/1 var(--sans); color: var(--ink-soft); background: var(--paper); border: 1px solid rgba(28, 24, 20, 0.16); border-radius: 999px; padding: 0.55rem 0.95rem; cursor: pointer; transition: border-color 160ms var(--ease), background-color 160ms var(--ease), color 160ms var(--ease); }
+.woty-alt:hover, .woty-chip:hover { border-color: var(--clay); color: var(--ink); }
+.woty-alt:focus-visible, .woty-chip:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+.woty-actions-row { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; align-items: center; }
+
+.woty-own { display: flex; gap: 0.5rem; }
+.woty-own .t-input { flex: 1; min-width: 0; }
+.woty-all { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.woty-check { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--ink-soft); cursor: pointer; }
+.woty-check input { width: 1.05rem; height: 1.05rem; accent-color: var(--clay); }
+
+[data-woty] .preview-stage { min-height: 24rem; }
+[data-woty].is-phone .preview-stage canvas { max-height: 34rem; width: auto; border-radius: 28px; box-shadow: 0 0 0 7px #1c1814, 0 0 0 8px #3a3029, 0 34px 60px -28px rgba(72, 43, 24, 0.55); }
+[data-woty]:not(.is-phone) .preview-stage canvas { max-height: 26rem; width: auto; }
+
+@media (max-width: 900px) { [data-woty] .tool-preview { order: 0; } }
+@media (max-width: 560px) {
+  .woty-opts { grid-template-columns: minmax(0, 1fr); }
+  .woty-opt { min-height: 0; }
+  [data-woty].is-phone .preview-stage canvas { max-height: 28rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .woty-progress i, .woty-opt, .woty-alt, .woty-chip { transition: none; }
+  .woty-quiz.swap .woty-q, .woty-quiz.swap .woty-opts, .woty-word { animation: none; }
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

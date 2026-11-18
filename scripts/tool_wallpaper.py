@@ -9,8 +9,8 @@ from toolkit import next_steps, privacy, tool_page, write
 P = {
     "path": "/affirmation-wallpaper/",
     "crumb": "Affirmation wallpaper maker",
-    "title": "Free affirmation wallpaper maker (iPhone, Android) | 369 Journal",
-    "h1": "Affirmation wallpaper maker",
+    "title": "Free Affirmation Wallpaper Maker (iPhone, Android) | 369 Journal",
+    "h1": "Affirmation Wallpaper Maker",
     "description": "Make a free affirmation wallpaper for your iPhone or Android lock screen or desktop. Pick a calm style and download it in full resolution. No sign-up.",
     "lede": "Put the words you want to live by on the screen you check a hundred times a day. Write your affirmation, choose a style, and download a sharp, full-resolution wallpaper for your phone or computer.",
     "badges": ["Free", "No sign-up", "Full resolution", "iPhone, Android and desktop"],
@@ -109,7 +109,7 @@ ARTICLE = """      <h2 id="set-iphone">How to set an affirmation wallpaper on iP
         <li><strong>Short:</strong> under 12 words reads at a glance. Long sentences shrink and get lost behind the clock.</li>
         <li><strong>Believable:</strong> if it makes you roll your eyes, soften it until it feels true enough.</li>
       </ul>
-      <p>Stuck for words? The <a href="/affirmation-generator/">free affirmation generator</a> gives you ideas for money, love, health, calm and more.</p>
+      <p>Stuck for words? The <a href="/affirmation-generator/">free affirmation generator</a> gives you ideas for money, love, health, calm and more. Want just one word? <a href="/word-of-the-year/">Find your Word of the Year</a> and save it as a lock screen.</p>
 
       <h2 id="why">Why put an affirmation on your wallpaper?</h2>
       <p>Most of us unlock our phone dozens of times a day. A short line on the lock screen turns some of those moments into a quick reminder of what you are working toward. It won&rsquo;t change anything by itself, and we won&rsquo;t pretend it does, but a reminder you can&rsquo;t miss makes it easier to stay focused and take the next small step.</p>

@@ -27,8 +27,8 @@ def page():
     p = {
         "path": "/affirmation-generator/",
         "crumb": "Affirmation generator",
-        "title": "Free affirmation generator + printable 369 sheet | 369 Journal",
-        "h1": "Free affirmation generator",
+        "title": "Free Affirmation Generator + Printable 369 Sheet | 369 Journal",
+        "h1": "Free Affirmation Generator",
         "description": "Free affirmation generator for money, love, health, career, calm or the new year. Check your own wording, then print a 369 method sheet. No sign-up.",
     }
     url = f"{SITE}{p['path']}"
@@ -162,6 +162,8 @@ def page():
         <li><a href="/369-method/tracker/">Free printable 33-day 369 tracker</a></li>
         <li><a href="/369-method/examples/">50 369 method examples</a></li>
         <li><a href="/new-year-manifestation-challenge/">21-day New Year manifestation challenge</a></li>
+        <li><a href="/word-of-the-year/">Find your Word of the Year for 2027</a></li>
+        <li><a href="/gratitude-journal-prompts/">Gratitude journal prompts</a></li>
         <li><a href="/books/">Books: The 369 Method and Scripting Manifestation</a></li>
       </ul>
     </article>

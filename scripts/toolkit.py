@@ -8,7 +8,7 @@ import html
 
 from build_posts import SITE, PUBLISHED, app_plug, book_card, crumbs, footer, head, write  # noqa: F401
 
-ASSET_V = "20261118"
+ASSET_V = "20261118c"
 
 CHECK = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg>'
 LOCK = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>'
@@ -21,6 +21,9 @@ TOOLS = [
     ("/journal-prompt-generator/", "Journal prompt generator", "Manifestation, scripting and more"),
     ("/angel-number-calculator/", "Angel number meanings", "Look up a number you keep seeing"),
     ("/affirmation-generator/", "Affirmation generator", "Plus a printable 369 sheet"),
+    ("/word-of-the-year/", "Word of the Year", "Five questions, one word for 2027"),
+    ("/numerology-calculator/", "Numerology calculator", "Life path, name and 2027 personal year"),
+    ("/gratitude-journal-prompts/", "Gratitude journal prompts", "108 prompts and a printable journal"),
 ]
 
 

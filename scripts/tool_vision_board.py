@@ -5,8 +5,8 @@ from toolkit import tool_page, next_steps, privacy, write
 P = {
     "path": "/vision-board-maker/",
     "crumb": "Vision board maker",
-    "title": "Free vision board maker: phone wallpaper or print | 369 Journal",
-    "h1": "Free vision board maker",
+    "title": "Free Vision Board Maker: Phone Wallpaper or Print | 369 Journal",
+    "h1": "Free Vision Board Maker",
     "description": "Make a free digital vision board with your photos and words, then save it as a phone wallpaper, desktop background or printable board. No sign-up.",
     "lede": "Add your own photos and a few words, pick a layout, and save it as a phone wallpaper, a desktop background or a board to print. Your photos never leave your device.",
     "badges": ["Free, no sign-up", "Photos stay on your device", "Phone, desktop and print sizes"],
@@ -99,7 +99,7 @@ ARTICLE = """      <h2 id="how">How to make a vision board that you&rsquo;ll act
 
       <h2 id="use">How to use it every day</h2>
       <p>A vision board is a reminder, not a spell. It works best when you look at it on purpose for a few seconds and then do one small thing that points toward it. Many people pair it with a short written ritual such as the <a href="/369-method/">369 method</a>: one affirmation written 3, 6 and 9 times a day. Need words for yours? Try the <a href="/affirmation-generator/">free affirmation generator</a>.</p>
-      <p>Making one for the new year? Our <a href="/new-year-manifestation-challenge/">21-day New Year challenge</a> gives you one small task a day to go with it.</p>
+      <p>Making one for the new year? Put <a href="/word-of-the-year/">your Word of the Year</a> in the middle of the board, and use our <a href="/new-year-manifestation-challenge/">21-day New Year challenge</a> for one small task a day to go with it.</p>
 """
 
 FAQ = [

@@ -1,0 +1,66 @@
+/* Numerology calculator. Prefix nu-. Uses the shared tool components from tools.css. */
+.nu .tool-preview { position: static; }
+.nu-form .t-hint { margin-bottom: 0; }
+.nu-gap { margin-top: 1.2rem; }
+.nu-input { font-size: 1.05rem; }
+.nu-go { margin-top: 1.3rem; width: 100%; justify-content: center; }
+.nu-method { margin-top: 0.9rem; }
+.nu .privacy-note { margin-top: 1.3rem; }
+
+.nu-card { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: clamp(1.2rem, 3.5vw, 2rem); box-shadow: 0 30px 60px -36px rgba(72, 43, 24, 0.35); min-height: 20rem; }
+.nu-card.nu-in .nu-result { animation: nu-rise 420ms var(--ease) both; }
+@keyframes nu-rise { from { opacity: 0; transform: translateY(8px); filter: blur(3px); } to { opacity: 1; transform: none; filter: none; } }
+.nu-empty { display: grid; place-items: center; text-align: center; gap: 1.2rem; min-height: 16rem; color: var(--muted); }
+.nu-empty p { max-width: 32ch; }
+.nu-orn { display: flex; gap: 0.35rem; }
+.nu-orn i { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--clay); }
+.nu-orn i:nth-child(2) { background: var(--gold); }
+.nu-orn i:nth-child(3) { background: var(--ink); }
+
+.nu-sec { padding: 1.4rem 0; border-top: 1px solid var(--line); }
+.nu-sec:first-child { border-top: 0; padding-top: 0; }
+.nu-k { margin: 0 0 0.3rem; font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+.nu-big { margin: 0.2rem 0 0; font-family: var(--serif); font-weight: 700; font-size: clamp(3.6rem, 10vw, 5.4rem); line-height: 0.95; letter-spacing: -0.03em; color: var(--ink); font-variant-numeric: lining-nums; }
+.nu-mid { font-size: clamp(2.6rem, 7vw, 3.4rem); margin: 0; flex: none; }
+.nu-words { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.nu-words li { padding: 0.3rem 0.75rem; border-radius: 999px; background: rgba(176, 89, 51, 0.09); color: var(--clay-ink); font-size: 0.86rem; font-weight: 600; }
+.nu-text { margin: 1rem 0 0; color: var(--ink-soft); line-height: 1.65; }
+.nu-soft { margin: 0.5rem 0 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.nu-tiny { font-size: 0.82rem; font-variant-numeric: tabular-nums; }
+.nu-math, .nu-ask, .nu-aff { margin-top: 1.1rem; padding: 0.95rem 1.05rem; border-radius: 16px; background: var(--paper); }
+.nu-math p { margin: 0; }
+.nu-math p + p { color: var(--ink-soft); line-height: 1.7; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.nu-ask p:last-child, .nu-aff p:last-child { margin: 0; }
+.nu-aff { background: rgba(199, 148, 63, 0.12); }
+.nu-serif { font-family: var(--serif); font-size: 1.15rem; line-height: 1.45; color: var(--ink); }
+.nu-ask .nu-serif, .nu-aff .nu-serif { display: block; margin: 0; }
+
+/* 2027 gets the spotlight */
+.nu-feature { margin-top: 0.4rem; padding: 1.3rem; border: 1px solid rgba(176, 89, 51, 0.28); border-radius: 20px; background: linear-gradient(180deg, rgba(176, 89, 51, 0.06), rgba(199, 148, 63, 0.06)); }
+.nu-sec.nu-feature:first-child { padding-top: 1.3rem; border-top: 1px solid rgba(176, 89, 51, 0.28); }
+.nu-yrow { display: flex; align-items: center; gap: 1rem; margin-top: 0.3rem; }
+.nu-theme { margin: 0; font-family: var(--serif); font-size: clamp(1.2rem, 3.5vw, 1.5rem); line-height: 1.2; color: var(--ink); }
+.nu-do { margin: 1rem 0 0; color: var(--ink-soft); line-height: 1.6; }
+.nu-aff-line { display: grid; gap: 0.2rem; }
+.nu-aff-line .nu-k { margin: 0; }
+.nu-past .nu-big { color: var(--ink-soft); }
+.nu-feature .nu-math { background: rgba(255, 253, 249, 0.7); }
+
+.nu-names { display: grid; gap: 0.9rem; margin-top: 0.4rem; }
+.nu-name { padding: 1rem 1.05rem; border-radius: 16px; background: var(--paper); }
+.nu-name h3 { margin: 0; font-size: 1rem; line-height: 1.3; font-family: var(--sans); font-weight: 600; color: var(--ink); }
+.nu-name-top { display: flex; align-items: center; gap: 0.9rem; }
+.nu-name .nu-text { margin-top: 0.6rem; }
+.nu-name .nu-words { margin-top: 0.7rem; }
+
+.nu-honest { margin: 0.4rem 0 0; padding-top: 1.1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+.nu-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+
+@media (max-width: 900px) { .nu .tool-preview { order: 0; } }
+@media (max-width: 480px) {
+  .nu-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .nu-feature { padding: 1.1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nu-card.nu-in .nu-result { animation: none; }
+}

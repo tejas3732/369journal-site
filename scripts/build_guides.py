@@ -170,8 +170,8 @@ PAGES.append({
     "path": "/369-method/money/",
     "ct": "site-money",
     "crumb": "369 method for money",
-    "title": "369 method for money: affirmations and how-to | 369 Journal",
-    "h1": "The 369 method for money: affirmations and how to do it",
+    "title": "369 Method for Money: Affirmations and How-To | 369 Journal",
+    "h1": "The 369 Method for Money: Affirmations and How to Do It",
     "description": "How to use the 369 method for money: write one money affirmation 3, 6 and 9 times a day. How to word it, 15 examples, and real action.",
     "lede": "Money is the most common reason people try the 369 method. Here is how to word a money affirmation that feels believable, examples you can adapt, and how to turn the ritual into steady progress.",
     "plug_title": "Track your money affirmation",
@@ -232,8 +232,8 @@ PAGES.append({
     "path": "/369-method/love/",
     "ct": "site-love",
     "crumb": "369 method for love",
-    "title": "369 method for love and a specific person | 369 Journal",
-    "h1": "The 369 method for love, a relationship or a specific person",
+    "title": "369 Method for Love and a Specific Person | 369 Journal",
+    "h1": "The 369 Method for Love, a Relationship or a Specific Person",
     "description": "How to use the 369 method for love: self-love, a new relationship, your partner or a specific person. How to word it kindly, with examples.",
     "lede": "Love is one of the most popular uses of the 369 method. The kindest and most effective way to do it is to write about the love you want to feel and give, not to try to control someone else.",
     "plug_title": "Keep your love affirmation close",
@@ -300,8 +300,8 @@ PAGES.append({
     "path": "/369-method/examples/",
     "ct": "site-examples",
     "crumb": "369 method examples",
-    "title": "50 369 method examples and affirmations to copy | 369 Journal",
-    "h1": "50 369 method examples you can copy and make your own",
+    "title": "50 369 Method Examples and Affirmations to Copy | 369 Journal",
+    "h1": "50 369 Method Examples You Can Copy and Make Your Own",
     "description": "50 ready-to-use 369 method affirmations for money, love, career, health, self-love and more, plus a simple formula to write your own.",
     "lede": "Not sure what to write? Here are 50 present-tense 369 affirmations across ten areas of life, plus a simple formula to write your own in a minute.",
     "plug_title": "Write your 369 affirmation tonight",
@@ -309,7 +309,7 @@ PAGES.append({
       <p>Most strong 369 affirmations follow one of these shapes:</p>
       <ul>
         <li><strong>I am</strong> [the person who has it]: &ldquo;I am thriving in my new career.&rdquo;</li>
-        <li><strong>I am so grateful that</strong> [it is already true]: &ldquo;I am so grateful that I passed my exam.&rdquo;</li>
+        <li><strong>I am so grateful that</strong> [it is already true]: &ldquo;I am so grateful that I passed my exam.&rdquo; If gratitude comes easily to you, these <a href="/gratitude-journal-prompts/">gratitude journal prompts</a> pair well with it.</li>
         <li><strong>I feel</strong> [the feeling of having it]: &ldquo;I feel calm and secure with money.&rdquo;</li>
       </ul>
       <p>If the full version feels too far away, soften it with &ldquo;I am becoming&rdquo; or &ldquo;I am learning to&rdquo;. A sentence you believe is better than a bigger one you resist.</p>
@@ -338,8 +338,8 @@ PAGES.append({
     "path": "/369-method/vs-55x5/",
     "ct": "site-55x5",
     "crumb": "369 vs 55x5 method",
-    "title": "369 method vs 55x5: which should you choose? | 369 Journal",
-    "h1": "369 method vs 55x5 method: which should you choose?",
+    "title": "369 Method vs 55x5: Which Should You Choose? | 369 Journal",
+    "h1": "369 Method vs 55x5 Method: Which Should You Choose?",
     "description": "369 method vs 55x5 method: how often you write, for how long, how much time each takes, and which one suits you. Plus how to do 55x5.",
     "lede": "Both are popular manifestation writing rituals, and both repeat one affirmation. The difference is rhythm: the 369 method spreads it across your day for weeks, while 55x5 packs it into five intense days.",
     "plug_title": "Prefer the 369 rhythm?",
@@ -398,12 +398,15 @@ def hub():
         ("/369-method/tesla/", "Did Tesla create the 369 method?", "What the record actually shows"),
     ]
     tools = [
+        ("/word-of-the-year/", "Find your Word of the Year", "Five questions, one word for 2027"),
         ("/vision-board-maker/", "Vision board maker", "Your photos and words as a wallpaper or print"),
         ("/affirmation-generator/", "Affirmation generator", "Words for your desire, plus a 369 sheet"),
         ("/affirmation-wallpaper/", "Affirmation wallpaper", "Your affirmation on your lock screen"),
         ("/letter-to-future-self/", "Letter to your future self", "Write it now, reopen it on the day you choose"),
         ("/journal-prompt-generator/", "Journal prompt generator", "Manifestation and scripting prompts"),
+        ("/gratitude-journal-prompts/", "Gratitude journal prompts", "108 prompts and a printable 30-day journal"),
         ("/angel-number-calculator/", "Angel number meanings", "Look up a number you keep seeing"),
+        ("/numerology-calculator/", "Numerology calculator", "Life path, name and 2027 personal year"),
     ]
     allg = {h: (h, t, d) for h, t, d in list(layout.GUIDES) + more}
     pick = lambda *hs: [allg[h] for h in hs]
@@ -423,13 +426,13 @@ def hub():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>369 method guides: how to, examples, money, love | 369 Journal</title>
+  <title>369 Method Guides: How to, Examples, Money, Love | 369 Journal</title>
   <meta name="description" content="Every 369 Journal guide in one place: how to do the 369 method, 50 examples, money, love, 369 vs 55x5, scripting, a free tracker and more.">
   <link rel="canonical" href="{SITE}/guides/">
   <meta name="theme-color" content="#faf6f0">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="369 Journal">
-  <meta property="og:title" content="369 method guides">
+  <meta property="og:title" content="369 Method Guides">
   <meta property="og:description" content="How to do the 369 method, examples, money, love and more.">
   <meta property="og:url" content="{SITE}/guides/">
   <meta property="og:image" content="{SITE}/assets/img/og.jpg">
@@ -446,7 +449,7 @@ def hub():
 
   <main>
     <div class="narrow article-head">
-      <h1>369 method guides</h1>
+      <h1>369 Method Guides</h1>
       <p>Everything you need to practice the 369 manifestation method: how to start, what to write, how to use it for money or love, and free tools.</p>
     </div>
     <div class="narrow prose">

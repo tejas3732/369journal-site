@@ -237,7 +237,8 @@ ARTICLE = f"""      <h2 id="how">How to use journal prompts</h2>
       <h2 id="lists">Prompts by category</h2>
       <p>A few from each category. The generator above has many more, and a different one every time.</p>
 {static_lists()}
-      <p>Want to write a longer letter to the person you are becoming? Use the guided <a href="/letter-to-future-self/">letter to your future self</a>.</p>"""
+      <p>Want to write a longer letter to the person you are becoming? Use the guided <a href="/letter-to-future-self/">letter to your future self</a>.</p>
+      <p>Doing a gratitude journal? There are 108 more in our <a href="/gratitude-journal-prompts/">gratitude journal prompts</a>, with a &ldquo;3 good things&rdquo; mode and a printable 30-day journal. Planning 2027? Start by choosing <a href="/word-of-the-year/">your Word of the Year</a>.</p>"""
 
 FAQ = [
     ("Is this journal prompt generator free?", "Yes. It is free, needs no sign-up and runs in your browser. Prompts you save stay on your device."),
@@ -251,8 +252,8 @@ FAQ = [
 P = {
     "path": "/journal-prompt-generator/",
     "crumb": "Journal prompt generator",
-    "title": "Free journal prompt generator for manifestation | 369 Journal",
-    "h1": "Journal prompt generator",
+    "title": "Free Journal Prompt Generator for Manifestation | 369 Journal",
+    "h1": "Journal Prompt Generator",
     "description": "Free journal prompt generator: manifestation, scripting, future-self, gratitude and New Year 2027 prompts. One click at a time, or print 30.",
     "lede": "Fresh journal prompts for manifestation, scripting, gratitude and more. Get a new one with every click, save your favourites, or print 30 with lines to write on.",
     "badges": ["Free", "No sign-up", "100+ prompts", "Printable"],

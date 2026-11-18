@@ -176,8 +176,8 @@ PAGES = []
 PAGES.append({
     "path": "/scripting-manifestation/",
     "crumb": "Scripting manifestation",
-    "title": "Scripting manifestation: how to do it + examples | 369 Journal",
-    "h1": "Scripting manifestation: how to do it, with examples",
+    "title": "Scripting Manifestation: How to Do It + Examples | 369 Journal",
+    "h1": "Scripting Manifestation: How to Do It, with Examples",
     "description": "What scripting manifestation is, how to write a script in six steps, six example scripts, common mistakes, and how to pair it with the 369 method.",
     "lede": "Scripting means writing one moment of your desire as if it has already happened. It takes ten minutes, needs only a pen, and works best when the scene is small enough to believe. Here is how to do it well.",
     "body": """      <nav class="toc" aria-label="On this page">
@@ -243,6 +243,7 @@ PAGES.append({
         ["Scripting", "One short scene of the same desire", "Once a day or a few times a week, often at night"],
     ]) + """
       <p>Use the same desire for both. For example, the affirmation &ldquo;I am thriving in my new role&rdquo; pairs with the second-week scene above.</p>
+      <p>Scripting also pairs well with gratitude. Writing thanks for what is already good, and for what you are working toward, puts you in the same &ldquo;it&rsquo;s already happening&rdquo; frame. Try the &ldquo;Gratitude for what&rsquo;s coming&rdquo; theme in our <a href="/gratitude-journal-prompts/">gratitude journal prompts</a>.</p>
 
       <h2 id="work">Does scripting work?</h2>
       <p>No study shows that writing a scene makes outside events happen by itself, and we won&rsquo;t promise that it does. What has modest research behind it is writing about your best possible future: it can lift mood and make goals feel clearer and more reachable. Scripting is most useful as a daily reminder of what you want, paired with small real steps.</p>
@@ -272,8 +273,8 @@ PAGES.append({
 PAGES.append({
     "path": "/369-manifestation-journal/",
     "crumb": "369 manifestation journal",
-    "title": "369 manifestation journal: how to set one up | 369 Journal",
-    "h1": "How to keep a 369 manifestation journal, on paper or in an app",
+    "title": "369 Manifestation Journal: How to Set One Up | 369 Journal",
+    "h1": "How to Keep a 369 Manifestation Journal, on Paper or in an App",
     "description": "How to set up a 369 manifestation journal: what to write each session, a simple page layout, tracking 21, 33 or 45 days, and paper vs app.",
     "lede": "A 369 manifestation journal is where you write one affirmation 3 times in the morning, 6 in the afternoon and 9 at night. Here is a page layout that works, what to write each session, and an honest look at paper versus an app.",
     "body": """      <nav class="toc" aria-label="On this page">
@@ -293,7 +294,7 @@ PAGES.append({
         <li><strong>One desire</strong>, chosen at the start and kept for the whole cycle.</li>
         <li><strong>One affirmation</strong> for it, short and in the present tense. See <a href="/369-method/examples/">50 examples</a> if you need wording.</li>
         <li><strong>18 lines a day:</strong> 3 in the morning, 6 in the afternoon, 9 at night, always with the same words.</li>
-        <li><strong>A short note</strong> at night: one thing you noticed or did that points toward your desire.</li>
+        <li><strong>A short note</strong> at night: one thing you noticed or did that points toward your desire. Some people add one line of thanks too; <a href="/gratitude-journal-prompts/">gratitude journal prompts</a> help on blank days.</li>
       </ul>
       <p>That last note is the part most people skip, and it is the part that makes the journal feel useful after a few weeks, because you can look back and see progress.</p>
 
@@ -376,7 +377,7 @@ DAYS = [
     ("Close", [
         "Read back your night notes. Write down every small sign of progress.",
         "Keep the affirmation or adjust it now, ready for January.",
-        "Write five things from 2026 you are grateful for.",
+        'Write five things from 2026 you are grateful for. Stuck? Use these <a href="/gratitude-journal-prompts/">gratitude prompts</a>.',
         "Plan January's first week: when you will write and one action per week.",
         "Script the morning of 1 January 2027.",
         "Write a short letter from your future self, one year from now.",
@@ -397,13 +398,13 @@ def day_rows():
 PAGES.append({
     "path": "/new-year-manifestation-challenge/",
     "crumb": "21-day New Year manifestation challenge",
-    "title": "21-day New Year manifestation challenge 2027 | 369 Journal",
-    "h1": "A 21-day New Year manifestation challenge for 2027",
+    "title": "21-Day New Year Manifestation Challenge 2027 | 369 Journal",
+    "h1": "A 21-Day New Year Manifestation Challenge for 2027",
     "description": "A free 21-day New Year manifestation challenge with the 369 method: one desire, 18 lines and one small task a day, in December or January.",
     "lede": "Most New Year goals are forgotten by mid-January. This challenge starts earlier and stays small: one desire, the 369 method every day, and one task a day for 21 days. Start on 11 December to finish on New Year&rsquo;s Eve, or on 1 January to begin the year with it.",
     "body": """      <h2 id="how">How the challenge works</h2>
       <ul>
-        <li><strong>One desire for 2027.</strong> Pick the one that would change your year most.</li>
+        <li><strong>One desire for 2027.</strong> Pick the one that would change your year most. Not sure where to start? <a href="/word-of-the-year/">Find your Word of the Year</a> in five questions, then build your desire around it.</li>
         <li><strong>The 369 method every day:</strong> your affirmation 3 times in the morning, 6 in the afternoon and 9 at night. New to it? Read <a href="/369-method/">how to do the 369 method</a>.</li>
         <li><strong>One small task a day</strong> from the plan below. Most take five to ten minutes.</li>
         <li><strong>Two start dates:</strong> 11 to 31 December (finish on New Year&rsquo;s Eve) or 1 to 21 January.</li>
@@ -460,8 +461,8 @@ PAGES.append({
     "path": "/369-method/tesla/",
     "parents": [("The 369 method", "/369-method/")],
     "crumb": "Did Tesla create the 369 method?",
-    "title": "Did Nikola Tesla really create the 369 method? | 369 Journal",
-    "h1": "Did Nikola Tesla really create the 369 method?",
+    "title": "Did Nikola Tesla Really Create the 369 Method? | 369 Journal",
+    "h1": "Did Nikola Tesla Really Create the 369 Method?",
     "description": "The 369 method is often credited to Nikola Tesla. What the record actually shows, where the method really came from, and why it can still help.",
     "lede": "Almost every 369 method video opens with Nikola Tesla. The truth is less magical but more useful: Tesla did not invent a journaling method, and the practice works for ordinary reasons that have nothing to do with him.",
     "body": """      <h2 id="quote">The quote everyone shares</h2>
@@ -473,7 +474,7 @@ PAGES.append({
       <p>None of these accounts mention writing an affirmation 3, 6 and 9 times a day. That connection was made by others, decades later.</p>
 
       <h2 id="origin">Where the 369 method actually came from</h2>
-      <p>The 369 method as people practise it today became popular through law of attraction communities and TikTok around 2020 and 2021. Creators combined an older idea, writing a desire repeatedly as a daily ritual, with Tesla&rsquo;s name and his supposed quote, which gave it a memorable story. It spread quickly because it is simple, free and easy to share.</p>
+      <p>The 369 method as people practise it today became popular through law of attraction communities and TikTok around 2020 and 2021. Creators combined an older idea, writing a desire repeatedly as a daily ritual, with Tesla&rsquo;s name and his supposed quote, which gave it a memorable story. It spread quickly because it is simple, free and easy to share. The numbers themselves come from numerology, where 3, 6 and 9 each carry their own associations; see <a href="/369-meaning/">what 369 means</a>, or work out your own numbers with the free <a href="/numerology-calculator/">numerology calculator</a>.</p>
 """ + table(["Claim", "What we can say"], [
         ["Tesla said 3, 6 and 9 are the key to the universe", "No reliable source; fact-checkers found no trace before about 2018"],
         ["Tesla was fascinated by the number 3", "Yes; his biographer describes habits built around threes"],
@@ -517,8 +518,8 @@ def books_page():
     p = {
         "path": "/books/",
         "crumb": "Books",
-        "title": "The 369 Method and Scripting Manifestation books | 369 Journal",
-        "h1": "Books for a calm manifestation practice",
+        "title": "The 369 Method and Scripting Manifestation Books | 369 Journal",
+        "h1": "Books for a Calm Manifestation Practice",
         "description": "Two guided workbooks by Tejas Rane: The 369 Method (a 45-day workbook) and Scripting Manifestation (a 30-day workbook). Paperback and Kindle.",
         "og_type": "website",
         "og_image": "/assets/img/books/the-369-method.jpg",

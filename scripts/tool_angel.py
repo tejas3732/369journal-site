@@ -164,7 +164,7 @@ DOTS = '<span class="an-dots" aria-hidden="true"><span><i></i><i></i><i></i></sp
 FAQ = [
     ("What is an angel number?", "An angel number is a repeating or patterned number, like 111 or 444, that some people notice again and again and read as a meaningful sign. The idea comes from numerology and modern spiritual communities."),
     ("Are angel numbers real?", "There is no scientific evidence that numbers carry messages. Our brains are very good at noticing patterns, especially ones we are already thinking about. Many people still find angel numbers useful as a reminder to pause, breathe and check their intentions."),
-    ("How does the angel number calculator work?", "Look up any number you keep seeing. Popular numbers have a written meaning; any other number gets a reading built from its digits and its reduced number. In birthday mode, the digits of your date of birth are added together until one digit (or 11, 22 or 33) is left, and the steps are shown."),
+    ("How does the angel number calculator work?", "Look up any number you keep seeing. Popular numbers have a written meaning; any other number gets a reading built from its digits and its reduced number. In birthday mode, your birth month, day and year are each reduced, then added together until one digit (or 11, 22 or 33) is left, and the steps are shown."),
     ("What does it mean if I keep seeing the same number?", "Most often it means the number has caught your attention, and once something has your attention you notice it more. You can use that moment as a cue to reflect: the question under each meaning is a good place to start."),
     ("What is the 369 angel number?", "369 is best known through the 369 manifestation method, where you write one desire 3, 6 and 9 times a day. As an angel number, people usually read it as a reminder to restate their intention."),
     ("Is my birthday or number saved anywhere?", "No. The tool runs in your browser. Your date of birth is never sent or stored."),
@@ -204,7 +204,7 @@ def tool():
               <input id="an-birth" class="t-input an-input" type="date" min="1900-01-01" max="2026-12-31">
               <button class="btn" type="submit">Find my number</button>
             </div>
-            <p class="t-hint">We add every digit of your birth date until one digit is left (or 11, 22 or 33), the way numerology usually does it.</p>
+            <p class="t-hint">We reduce your birth month, day and year separately, then add them until one digit is left (or 11, 22 or 33). It's the same life path method as our <a href="/numerology-calculator/">numerology calculator</a>.</p>
           </form>
           {privacy("Runs in your browser. Your number and date of birth are never sent or saved.")}
         </div>
@@ -222,7 +222,7 @@ def tool():
     <script type="application/json" id="angel-data">{json.dumps(DATA, ensure_ascii=False)}</script>"""
 
     article = f"""      <h2 id="what">What are angel numbers?</h2>
-      <p>Angel numbers are repeating or patterned numbers, such as 111, 444 or 1212, that some people notice again and again: on a clock, a receipt or a number plate. The idea comes from numerology and modern spiritual communities, where each digit has long carried its own associations.</p>
+      <p>Angel numbers are repeating or patterned numbers, such as 111, 444 or 1212, that some people notice again and again: on a clock, a receipt or a number plate. The idea comes from numerology and modern spiritual communities, where each digit has long carried its own associations. Curious about the numbers in your own birthday and name? Try the free <a href="/numerology-calculator/">numerology calculator</a>.</p>
       <p>To be straightforward with you: there is no scientific evidence that numbers carry messages. Our minds are pattern-finders, and we notice what we are already thinking about. Many people still find angel numbers helpful as a small, everyday reminder to pause, breathe and check in with what they want. That is how this tool is meant to be used.</p>
 
       <h2 id="use">How to use an angel number as a reflection prompt</h2>
@@ -241,8 +241,8 @@ def tool():
     p = {
         "path": "/angel-number-calculator/",
         "crumb": "Angel number meanings",
-        "title": "Angel number calculator and meanings (free) | 369 Journal",
-        "h1": "Angel number meanings",
+        "title": "Angel Number Calculator and Meanings (Free) | 369 Journal",
+        "h1": "Angel Number Meanings",
         "description": "Look up any angel number you keep seeing (111, 444, 1111, 369) or find your birthday number, with honest meanings and an affirmation for each.",
         "lede": "Look up a number you keep seeing, or find the number in your birthday. Each meaning comes with a question to reflect on and an affirmation to try. No hype, no predictions.",
         "badges": ["Free", "No sign-up", "Any number, plus your birthday"],
@@ -288,6 +288,7 @@ def meaning_page():
 <tr><th scope="row">6</th><td>Care, home, responsibility</td><td>Afternoon: write it 6 times to return to it</td></tr>
 <tr><th scope="row">9</th><td>Completion, compassion, letting go</td><td>Night: write it 9 times to close the day</td></tr>
 </tbody></table></div>
+      <p>Want to see which numbers numerology links with you? The free <a href="/numerology-calculator/">numerology calculator</a> works out your life path number, your name numbers and your 2027 personal year, with the maths shown.</p>
       <p>Put together, people often read 369 as a small story: <em>say what you want, care for it every day, then let it go and trust the process</em>.</p>
 
       <h2 id="angel">369 as an angel number</h2>
@@ -314,8 +315,8 @@ def meaning_page():
     p = {
         "path": "/369-meaning/",
         "crumb": "369 meaning",
-        "title": "369 meaning: angel number 369 and the 369 method | 369 Journal",
-        "h1": "What does 369 mean?",
+        "title": "369 Meaning: Angel Number 369 and the 369 Method | 369 Journal",
+        "h1": "What Does 369 Mean?",
         "description": "What 369 means: 3, 6 and 9 in numerology, 369 as an angel number, the 369 manifestation method, and the truth about the Tesla quote.",
         "lede": "369 shows up as an angel number and as a popular manifestation method. Here is what people commonly mean by it, what each number stands for, and how to use it in a calm, practical way.",
         "body": body,

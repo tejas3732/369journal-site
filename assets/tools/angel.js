@@ -116,10 +116,18 @@
   function birthday() {
     var v = birthInput.value; // yyyy-mm-dd
     if (!/^\d{4}-\d{2}-\d{2}$/.test(v)) { birthInput.focus(); toast("Choose your date of birth"); return; }
-    var digits = v.replace(/-/g, "");
-    var first = sumDigits(digits);
-    var steps = [digits.split("").join(" + ") + " = " + first];
-    var r = reduce(String(first));
+    // Standard life path method (same as /numerology-calculator/): reduce month, day and
+    // year separately, keeping 11, 22 and 33, then add them and reduce again.
+    var p = v.split("-"), names = ["Year", "Month", "Day"], parts = [];
+    var steps = [];
+    [1, 2, 0].forEach(function (i) {
+      var raw = String(Number(p[i])), r = reduce(raw);
+      parts.push(r.value);
+      steps.push(names[i] + " " + raw + (r.steps.length ? ": " + r.steps.join(", ") : ""));
+    });
+    var total = parts.reduce(function (a, x) { return a + Number(x); }, 0);
+    steps.push(parts.join(" + ") + " = " + total);
+    var r = reduce(String(total));
     steps = steps.concat(r.steps);
     var num = r.value;
     var d = DATA.digits[num];

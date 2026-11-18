@@ -148,8 +148,8 @@ FAQ = [
 P = {
     "path": "/letter-to-future-self/",
     "crumb": "Letter to your future self",
-    "title": "Write a letter to your future self (free) | 369 Journal",
-    "h1": "Write a letter to your future self",
+    "title": "Write a Letter to Your Future Self (Free) | 369 Journal",
+    "h1": "Write a Letter to Your Future Self",
     "description": "Write a letter to your future self with gentle prompts, then print it, save a PDF, or add a calendar reminder to reopen it later. No email needed.",
     "lede": "Answer a few gentle prompts, choose when to open it, and keep the letter as a PDF or a calendar reminder that brings it back on the day. No email, no account, and it never leaves your device.",
     "badges": ["Free", "No email or sign-up", "Private to your device"],
