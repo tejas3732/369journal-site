@@ -142,6 +142,7 @@ def apply(file):
                       '<meta name="theme-color" content="#faf6f0">\n  <meta name="apple-itunes-app" content="app-id=6770804298">', 1)
     if GTAG_ID not in s:
         s = s.replace("<head>", "<head>\n" + GTAG, 1)
+    s = apply_related(s, cur)
     file.write_text(s)
     return True
 
@@ -164,6 +165,87 @@ def main():
         if apply(f):
             print("layout ->", f.relative_to(ROOT))
 
+
+# ---------------------------------------------------------------------------
+# "Keep reading": 3-4 hand-picked related pages at the end of every page body.
+# Edit RELATED to change them; layout.py replaces the block on every run.
+PAGES = {
+    "/369-method/": ("The 369 method, step by step", "How to do it, and 21 vs 33 vs 45 days"),
+    "/369-method/examples/": ("50 369 method examples", "Affirmations to copy for money, love and more"),
+    "/369-method/money/": ("369 method for money", "How to word a money affirmation"),
+    "/369-method/love/": ("369 method for love", "Self-love, a partner or a specific person"),
+    "/369-method/vs-55x5/": ("369 vs 55x5 method", "Which manifestation ritual suits you"),
+    "/369-method/tesla/": ("Did Tesla create the 369 method?", "What the record actually shows"),
+    "/369-method/tracker/": ("Free printable 369 tracker", "Tick off 33 days on paper"),
+    "/369-meaning/": ("What does 369 mean?", "3, 6 and 9, angel numbers and the method"),
+    "/369-manifestation-journal/": ("How to keep a 369 journal", "What to write, page layout, paper or app"),
+    "/scripting-manifestation/": ("Scripting manifestation", "How to script a desire, with examples"),
+    "/new-year-manifestation-challenge/": ("21-day New Year challenge", "A free 369 plan for 2027"),
+    "/best-369-method-apps/": ("Best 369 method apps", "Six iPhone apps, honestly compared"),
+    "/faq/": ("369 method FAQ", "Missed days, timing and what to write"),
+    "/guides/": ("All 369 method guides", "Every guide in one place"),
+    "/tools/": ("All free tools", "Vision board, wallpapers, prompts and more"),
+    "/books/": ("The 369 Method and Scripting books", "Guided workbooks in paperback and on Kindle"),
+    "/vision-board-maker/": ("Free vision board maker", "A phone wallpaper, desktop or print"),
+    "/affirmation-wallpaper/": ("Affirmation wallpaper maker", "Put your affirmation on your lock screen"),
+    "/affirmation-generator/": ("Affirmation generator", "Words for your desire, plus a 369 sheet"),
+    "/letter-to-future-self/": ("Letter to your future self", "Write it now, reopen it next year"),
+    "/journal-prompt-generator/": ("Journal prompt generator", "Manifestation and scripting prompts"),
+    "/angel-number-calculator/": ("Angel number meanings", "Look up a number you keep seeing"),
+}
+RELATED = {
+    "/369-method/": ["/369-method/examples/", "/affirmation-wallpaper/", "/369-manifestation-journal/", "/faq/"],
+    "/369-method/examples/": ["/affirmation-generator/", "/affirmation-wallpaper/", "/scripting-manifestation/", "/journal-prompt-generator/"],
+    "/369-method/money/": ["/vision-board-maker/", "/affirmation-wallpaper/", "/scripting-manifestation/", "/369-meaning/"],
+    "/369-method/love/": ["/scripting-manifestation/", "/letter-to-future-self/", "/journal-prompt-generator/", "/affirmation-wallpaper/"],
+    "/369-method/vs-55x5/": ["/369-method/", "/369-method/tracker/", "/best-369-method-apps/", "/faq/"],
+    "/369-method/tesla/": ["/369-meaning/", "/angel-number-calculator/", "/369-method/", "/faq/"],
+    "/369-method/tracker/": ["/369-method/examples/", "/affirmation-wallpaper/", "/angel-number-calculator/", "/new-year-manifestation-challenge/"],
+    "/369-meaning/": ["/angel-number-calculator/", "/369-method/tesla/", "/369-method/examples/", "/faq/"],
+    "/369-manifestation-journal/": ["/journal-prompt-generator/", "/best-369-method-apps/", "/letter-to-future-self/", "/books/"],
+    "/scripting-manifestation/": ["/letter-to-future-self/", "/journal-prompt-generator/", "/369-manifestation-journal/", "/vision-board-maker/"],
+    "/new-year-manifestation-challenge/": ["/vision-board-maker/", "/letter-to-future-self/", "/journal-prompt-generator/", "/affirmation-wallpaper/"],
+    "/best-369-method-apps/": ["/369-manifestation-journal/", "/369-method/", "/369-method/tracker/", "/faq/"],
+    "/faq/": ["/369-method/", "/angel-number-calculator/", "/best-369-method-apps/", "/tools/"],
+    "/about/": ["/books/", "/tools/", "/guides/", "/369-method/tesla/"],
+    "/books/": ["/369-method/", "/scripting-manifestation/", "/369-manifestation-journal/", "/tools/"],
+    "/tools/": ["/369-method/", "/369-meaning/", "/guides/", "/books/"],
+    "/vision-board-maker/": ["/new-year-manifestation-challenge/", "/369-method/money/", "/scripting-manifestation/"],
+    "/affirmation-wallpaper/": ["/369-method/examples/", "/angel-number-calculator/", "/369-meaning/"],
+    "/affirmation-generator/": ["/369-method/examples/", "/369-method/money/", "/369-method/love/"],
+    "/letter-to-future-self/": ["/scripting-manifestation/", "/new-year-manifestation-challenge/", "/369-method/love/"],
+    "/journal-prompt-generator/": ["/scripting-manifestation/", "/369-manifestation-journal/", "/369-method/examples/"],
+    "/angel-number-calculator/": ["/369-meaning/", "/369-method/tesla/", "/369-method/"],
+}
+TOOL_PAGES = {"/vision-board-maker/", "/affirmation-wallpaper/", "/affirmation-generator/",
+              "/letter-to-future-self/", "/journal-prompt-generator/", "/angel-number-calculator/"}
+RELATED_RE = re.compile(r"\s*<!-- related -->.*?<!-- /related -->", re.S)
+
+
+def related(cur):
+    items = RELATED.get(cur)
+    if not items:
+        return ""
+    title = "Guides to go with it" if cur in TOOL_PAGES else "Keep reading"
+    cards = "\n".join(
+        f'        <a href="{h}"><strong>{PAGES[h][0]}</strong><span>{PAGES[h][1]}</span></a>' for h in items)
+    return f"""
+    <!-- related -->
+    <nav class="related narrow print-hide" aria-label="{title}">
+      <h2>{title}</h2>
+      <div class="related-grid">
+{cards}
+      </div>
+    </nav>
+    <!-- /related -->"""
+
+
+def apply_related(s, cur):
+    s = RELATED_RE.sub("", s)
+    block = related(cur)
+    if block and "</main>" in s:
+        s = s.replace("\n  </main>", block + "\n  </main>", 1)
+    return s
 
 if __name__ == "__main__":
     main()

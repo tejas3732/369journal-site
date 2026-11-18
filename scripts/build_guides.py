@@ -119,7 +119,7 @@ def page(p):
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/site.css?v=20261118f">
+  <link rel="stylesheet" href="/assets/site.css?v=20261118g">
   <script type="application/ld+json">
 {json.dumps(ld, indent=2, ensure_ascii=False)}
   </script>
@@ -392,15 +392,31 @@ def guide_rows(items):
 
 def hub():
     import layout  # noqa: E402  (same folder)
-    start = [g for g in layout.GUIDES if g[0] in ("/369-method/", "/369-method/examples/", "/369-method/tracker/")]
-    goals = [g for g in layout.GUIDES if g[0] in ("/369-method/money/", "/369-method/love/")]
-    compare = [g for g in layout.GUIDES if g[0] in ("/369-method/vs-55x5/", "/best-369-method-apps/")]
+    more = [
+        ("/369-manifestation-journal/", "How to keep a 369 journal", "What to write, a page layout, paper or app"),
+        ("/369-meaning/", "What does 369 mean?", "3, 6 and 9, angel number 369 and the method"),
+        ("/369-method/tesla/", "Did Tesla create the 369 method?", "What the record actually shows"),
+    ]
+    tools = [
+        ("/vision-board-maker/", "Vision board maker", "Your photos and words as a wallpaper or print"),
+        ("/affirmation-generator/", "Affirmation generator", "Words for your desire, plus a 369 sheet"),
+        ("/affirmation-wallpaper/", "Affirmation wallpaper", "Your affirmation on your lock screen"),
+        ("/letter-to-future-self/", "Letter to your future self", "Write it now, reopen it on the day you choose"),
+        ("/journal-prompt-generator/", "Journal prompt generator", "Manifestation and scripting prompts"),
+        ("/angel-number-calculator/", "Angel number meanings", "Look up a number you keep seeing"),
+    ]
+    allg = {h: (h, t, d) for h, t, d in list(layout.GUIDES) + more}
+    pick = lambda *hs: [allg[h] for h in hs]
+    start = pick("/369-method/", "/369-method/examples/", "/369-manifestation-journal/", "/369-method/tracker/")
+    goals = pick("/369-method/money/", "/369-method/love/", "/scripting-manifestation/", "/new-year-manifestation-challenge/")
+    understand = pick("/369-meaning/", "/369-method/tesla/")
+    compare = pick("/369-method/vs-55x5/", "/best-369-method-apps/")
     ld = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "369 method guides",
         "url": f"{SITE}/guides/",
-        "hasPart": [{"@type": "WebPage", "name": t, "url": f"{SITE}{h}"} for h, t, _ in layout.GUIDES],
+        "hasPart": [{"@type": "WebPage", "name": t, "url": f"{SITE}{h}"} for h, t, _ in list(allg.values()) + tools],
     }
     return f"""<!doctype html>
 <html lang="en">
@@ -419,7 +435,7 @@ def hub():
   <meta property="og:image" content="{SITE}/assets/img/og.jpg">
   <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/site.css?v=20261118f">
+  <link rel="stylesheet" href="/assets/site.css?v=20261118g">
   <script type="application/ld+json">
 {json.dumps(ld, indent=2, ensure_ascii=False)}
   </script>
@@ -442,10 +458,20 @@ def hub():
       <div class="guides" style="grid-template-columns:1fr">
 {guide_rows(goals)}
       </div>
+      <h2>Understand the numbers</h2>
+      <div class="guides" style="grid-template-columns:1fr">
+{guide_rows(understand)}
+      </div>
       <h2>Compare</h2>
       <div class="guides" style="grid-template-columns:1fr">
 {guide_rows(compare)}
       </div>
+      <h2>Free tools</h2>
+      <p>Small tools that run in your browser, with no sign-up. <a href="/tools/">See all free tools</a>.</p>
+      <div class="guides" style="grid-template-columns:1fr">
+{guide_rows(tools)}
+      </div>
+      <p>Prefer paper? <a href="/books/">The 369 Method and Scripting Manifestation workbooks</a> come in paperback and on Kindle.</p>
       <div class="app-plug" style="margin-top:3rem">
         <img src="/assets/img/app-icon-512.png" alt="369 Journal app icon" width="64" height="64">
         <div>

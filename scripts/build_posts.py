@@ -106,7 +106,7 @@ def head(p, ld):
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/site.css?v=20261118f">
+  <link rel="stylesheet" href="/assets/site.css?v=20261118g">
   <script type="application/ld+json">
 {json.dumps(ld, indent=2, ensure_ascii=False)}
   </script>
