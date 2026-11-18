@@ -1,0 +1,69 @@
+/* Angel number meanings tool + the mini call-to-action on /369-meaning/. */
+
+.an-mode { margin-bottom: 1.3rem; display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+.an-mode span { justify-content: center; text-align: center; width: 100%; height: 100%; }
+.an-form + .an-form { margin-top: 0; }
+.an-row { display: flex; gap: 0.6rem; }
+.an-row .t-input { flex: 1 1 auto; min-width: 0; }
+.an-row .btn { flex: none; }
+.an-input { font-size: 1.15rem; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+input[type="date"].an-input { letter-spacing: 0; font-size: 1rem; }
+.an-pop-label { margin-top: 1.3rem; }
+.an-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.an-chip { font: 600 0.92rem/1 var(--sans); font-variant-numeric: tabular-nums; color: var(--ink-soft); background: var(--paper); border: 1px solid rgba(28, 24, 20, 0.16); border-radius: 999px; padding: 0.55rem 0.85rem; cursor: pointer; transition: border-color 160ms var(--ease), background-color 160ms var(--ease), color 160ms var(--ease); }
+.an-chip:hover { border-color: var(--clay); color: var(--ink); }
+.an-chip:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+.an .privacy-note { margin-top: 1.3rem; }
+
+/* Result card */
+.an-card { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: clamp(1.4rem, 3.5vw, 2.2rem); box-shadow: 0 30px 60px -36px rgba(72, 43, 24, 0.35); min-height: 20rem; }
+.an-card.an-in .an-result { animation: an-rise 420ms var(--ease) both; }
+@keyframes an-rise { from { opacity: 0; transform: translateY(8px); filter: blur(3px); } to { opacity: 1; transform: none; filter: none; } }
+.an-empty { display: grid; place-items: center; text-align: center; gap: 1.2rem; min-height: 16rem; color: var(--muted); }
+.an-empty p { max-width: 30ch; }
+
+/* 3 · 6 · 9 dot motif from the book cover */
+.an-dots { display: grid; gap: 0.32rem; justify-items: start; }
+.an-dots > span { display: flex; gap: 0.32rem; }
+.an-dots i, .an-dots b, .an-dots em { width: 0.5rem; height: 0.5rem; border-radius: 50%; display: block; }
+.an-dots i { background: var(--clay); }
+.an-dots b { background: var(--gold); }
+.an-dots em { background: var(--ink); }
+.an-empty .an-dots { justify-items: center; }
+
+.an-top { display: grid; gap: 0.6rem; }
+.an-num { margin: 0.3rem 0 0; font-family: var(--serif); font-weight: 700; font-size: clamp(3.4rem, 9vw, 5.2rem); line-height: 0.95; letter-spacing: -0.03em; color: var(--ink); font-variant-numeric: lining-nums; }
+.an-label { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.an-words { list-style: none; margin: 1.1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.an-words li { padding: 0.32rem 0.75rem; border-radius: 999px; background: rgba(176, 89, 51, 0.09); color: var(--clay-ink); font-size: 0.86rem; font-weight: 600; }
+.an-text { margin: 1.1rem 0 0; color: var(--ink-soft); line-height: 1.65; }
+.an-soft { color: var(--muted); font-size: 0.95rem; }
+.an-list { margin: 0.9rem 0 0; padding-left: 1.15rem; color: var(--ink-soft); }
+.an-list li { margin: 0.35rem 0; }
+.an-list li::marker { color: var(--clay); }
+.an-ask, .an-aff, .an-math { margin-top: 1.2rem; padding: 1rem 1.1rem; border-radius: 16px; background: var(--paper); }
+.an-ask-k { margin: 0 0 0.3rem; font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+.an-ask p:last-child, .an-math p { margin: 0; }
+.an-ask p + p { font-family: var(--serif); font-size: 1.12rem; color: var(--ink); line-height: 1.45; }
+.an-math p + p { font-variant-numeric: tabular-nums; color: var(--ink-soft); line-height: 1.7; }
+.an-math .an-root { margin-top: 0.5rem; }
+.an-aff { background: rgba(199, 148, 63, 0.12); }
+.an-aff-t { margin: 0; font-family: var(--serif); font-size: 1.18rem; color: var(--ink); line-height: 1.45; }
+.an-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.3rem; }
+.an-related { display: inline-block; margin-top: 0.9rem; }
+
+/* Mini call-to-action box used on /369-meaning/ */
+.an-mini { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 1.5rem; padding: 1.3rem 1.4rem; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); }
+.an-mini p { margin: 0; max-width: 40ch; }
+
+@media (max-width: 900px) { .an .tool-preview { order: 0; } }
+@media (max-width: 480px) {
+  .an-row { flex-direction: column; }
+  .an-row .btn { justify-content: center; }
+  .an-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .an-mini .btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .an-card.an-in .an-result { animation: none; }
+  .an-chip { transition: none; }
+}

@@ -1,0 +1,82 @@
+/* Letter to your future self. Builds on tools.css. */
+
+.letter-open { display: grid; gap: 0.8rem; }
+.letter-open .seg { align-self: start; }
+.letter-meta { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; margin-top: 0.2rem; }
+.letter-meta .count { color: var(--muted); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.letter-restored { margin: 0 0 0.9rem; padding: 0.6rem 0.85rem; border-radius: 12px; background: var(--paper-deep); color: var(--ink-soft); font-size: 0.88rem; }
+
+/* Guided prompts: quiet disclosure rows */
+.lp { border-top: 1px solid var(--line); }
+.lp:last-of-type { border-bottom: 1px solid var(--line); }
+.lp > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 0.15rem; font-weight: 600; font-size: 0.97rem; color: var(--ink); border-radius: 10px; }
+.lp > summary::-webkit-details-marker { display: none; }
+.lp > summary .dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; border: 1.5px solid rgba(28, 24, 20, 0.28); flex: none; transition: background-color 180ms var(--ease), border-color 180ms var(--ease); }
+.lp > summary.is-filled .dot { background: var(--clay); border-color: var(--clay); }
+.lp > summary .chev { margin-left: auto; width: 0.95rem; height: 0.95rem; color: var(--muted); transition: transform 220ms var(--ease); flex: none; }
+.lp[open] > summary .chev { transform: rotate(180deg); }
+.lp > summary:hover { color: var(--clay-ink); }
+.lp .t-textarea { margin: 0 0 1rem; }
+.lp-hint { color: var(--muted); font-size: 0.85rem; margin: -0.2rem 0 0.55rem; }
+
+/* The letter sheet */
+.letter-stage { padding: clamp(1rem, 3vw, 1.8rem); place-items: stretch; }
+.letter-sheet {
+  position: relative; width: 100%; max-width: 34rem; margin: 0 auto; background: #fffdf8; color: #2a221c;
+  border-radius: 6px; padding: clamp(1.6rem, 4vw, 2.6rem) clamp(1.4rem, 4vw, 2.6rem) clamp(1.8rem, 4vw, 2.6rem);
+  box-shadow: 0 30px 60px -32px rgba(72, 43, 24, 0.5), 0 6px 16px -10px rgba(72, 43, 24, 0.25);
+  font-family: var(--serif); line-height: 1.7; max-height: 72vh; overflow: auto; scrollbar-width: thin;
+}
+.letter-dots { display: grid; gap: 0.32rem; margin-bottom: 1.4rem; }
+.letter-dots span { display: flex; gap: 0.32rem; }
+.letter-dots i { width: 0.42rem; height: 0.42rem; border-radius: 50%; display: block; }
+.letter-dots .r3 i { background: var(--clay); }
+.letter-dots .r6 i { background: var(--gold); }
+.letter-dots .r9 i { background: #1c1814; }
+.letter-dates { font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.01em; color: #6e6052; display: grid; gap: 0.1rem; margin-bottom: 1.6rem; }
+.letter-dates strong { color: #2a221c; font-weight: 600; }
+.letter-greet { font-size: 1.35rem; margin: 0 0 1rem; color: #1c1814; }
+.letter-body section + section { margin-top: 1.1rem; }
+.letter-body h3 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 0.92rem; color: #974622; margin: 0 0 0.2rem; letter-spacing: 0; }
+.letter-body p { margin: 0; font-size: 1.04rem; white-space: pre-line; overflow-wrap: anywhere; }
+.letter-body p + p { margin-top: 0.6rem; }
+.letter-empty { color: #8a7a6b; font-style: italic; margin: 0; }
+.letter-sign { margin-top: 1.8rem; }
+.letter-sign p { margin: 0; }
+.letter-sign .who { font-style: italic; color: #6e6052; }
+.letter-foot { font-family: var(--sans); font-size: 0.72rem; color: #8a7a6b; margin-top: 2rem; display: none; }
+
+.letter-outputs { display: grid; gap: 0.6rem; }
+.letter-outputs .row { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+.letter-outputs .why { color: var(--muted); font-size: 0.85rem; text-align: center; max-width: 34rem; margin: 0 auto; }
+
+@media (max-width: 900px) {
+  /* Write first, then see it: keep the letter below the prompts on phones. */
+  [data-tool="letter-to-future-self"] .tool-preview { order: 0; }
+  .letter-sheet { max-height: none; }
+}
+@media (max-width: 480px) {
+  .letter-open .seg { display: grid; grid-template-columns: 1fr 1fr; }
+  .letter-open .seg span { justify-content: center; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp > summary .chev, .lp > summary .dot { transition: none; }
+}
+
+@media print {
+  @page { size: A4 portrait; margin: 18mm; }
+  body { background: #fff; }
+  [data-tool="letter-to-future-self"] .tool-head,
+  [data-tool="letter-to-future-self"] .tool-controls,
+  [data-tool="letter-to-future-self"] .letter-outputs,
+  [data-tool="letter-to-future-self"] .tool-next,
+  [data-tool="letter-to-future-self"] > article,
+  .t-toast { display: none !important; }
+  [data-tool="letter-to-future-self"] .tool-shell { display: block; width: 100%; margin: 0; }
+  [data-tool="letter-to-future-self"] .tool-preview { position: static; display: block; }
+  .letter-stage { background: none !important; border: 0 !important; padding: 0 !important; min-height: 0; display: block; }
+  .letter-sheet { max-width: none; max-height: none; overflow: visible; box-shadow: none; padding: 0; background: #fff; font-size: 11.5pt; }
+  .letter-dots i { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .letter-body section { break-inside: avoid; }
+  .letter-foot { display: block; }
+}

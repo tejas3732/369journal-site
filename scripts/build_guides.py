@@ -119,11 +119,11 @@ def page(p):
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site.css?v=20261118f">
   <script type="application/ld+json">
 {json.dumps(ld, indent=2, ensure_ascii=False)}
   </script>
-  <script src="/assets/analytics.js" defer></script>
+  <script src="/assets/analytics.js?v=20261118" defer></script>
 </head>
 <body>
 {HEADER}
@@ -170,9 +170,9 @@ PAGES.append({
     "path": "/369-method/money/",
     "ct": "site-money",
     "crumb": "369 method for money",
-    "title": "369 method for money: affirmations and how to do it | 369 Journal",
+    "title": "369 method for money: affirmations and how-to | 369 Journal",
     "h1": "The 369 method for money: affirmations and how to do it",
-    "description": "How to use the 369 manifestation method for money: write one money affirmation 3, 6 and 9 times a day. How to word it, 15 example money affirmations, and how to pair it with real action.",
+    "description": "How to use the 369 method for money: write one money affirmation 3, 6 and 9 times a day. How to word it, 15 examples, and real action.",
     "lede": "Money is the most common reason people try the 369 method. Here is how to word a money affirmation that feels believable, examples you can adapt, and how to turn the ritual into steady progress.",
     "plug_title": "Track your money affirmation",
     "body": """      <h2 id="how">How to do the 369 method for money</h2>
@@ -232,9 +232,9 @@ PAGES.append({
     "path": "/369-method/love/",
     "ct": "site-love",
     "crumb": "369 method for love",
-    "title": "369 method for love and a specific person: how to do it | 369 Journal",
+    "title": "369 method for love and a specific person | 369 Journal",
     "h1": "The 369 method for love, a relationship or a specific person",
-    "description": "How to use the 369 manifestation method for love: self-love, a new relationship, a current partner or a specific person. How to word it kindly, example love affirmations and common questions.",
+    "description": "How to use the 369 method for love: self-love, a new relationship, your partner or a specific person. How to word it kindly, with examples.",
     "lede": "Love is one of the most popular uses of the 369 method. The kindest and most effective way to do it is to write about the love you want to feel and give, not to try to control someone else.",
     "plug_title": "Keep your love affirmation close",
     "body": """      <h2 id="how">How to do the 369 method for love</h2>
@@ -302,7 +302,7 @@ PAGES.append({
     "crumb": "369 method examples",
     "title": "50 369 method examples and affirmations to copy | 369 Journal",
     "h1": "50 369 method examples you can copy and make your own",
-    "description": "50 ready-to-use 369 method affirmation examples for money, career, love, self-love, health, home, exams, peace, travel and family, plus a simple formula to write your own.",
+    "description": "50 ready-to-use 369 method affirmations for money, love, career, health, self-love and more, plus a simple formula to write your own.",
     "lede": "Not sure what to write? Here are 50 present-tense 369 affirmations across ten areas of life, plus a simple formula to write your own in a minute.",
     "plug_title": "Write your 369 affirmation tonight",
     "body": """      <h2 id="formula">A simple formula for your own 369 affirmation</h2>
@@ -338,9 +338,9 @@ PAGES.append({
     "path": "/369-method/vs-55x5/",
     "ct": "site-55x5",
     "crumb": "369 vs 55x5 method",
-    "title": "369 method vs 55x5 method: differences and which to choose | 369 Journal",
+    "title": "369 method vs 55x5: which should you choose? | 369 Journal",
     "h1": "369 method vs 55x5 method: which should you choose?",
-    "description": "The 369 method and the 55x5 method compared: how many times you write, for how long, how much time each takes, and which suits you. Plus how to do the 55x5 method.",
+    "description": "369 method vs 55x5 method: how often you write, for how long, how much time each takes, and which one suits you. Plus how to do 55x5.",
     "lede": "Both are popular manifestation writing rituals, and both repeat one affirmation. The difference is rhythm: the 369 method spreads it across your day for weeks, while 55x5 packs it into five intense days.",
     "plug_title": "Prefer the 369 rhythm?",
     "body": """      <h2 id="compare">The 369 method and 55x5 method side by side</h2>
@@ -408,7 +408,7 @@ def hub():
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>369 method guides: how to, examples, money, love | 369 Journal</title>
-  <meta name="description" content="Every 369 Journal guide in one place: how to do the 369 method, 50 affirmation examples, the 369 method for money and love, 369 vs 55x5, a free printable tracker and an honest app comparison.">
+  <meta name="description" content="Every 369 Journal guide in one place: how to do the 369 method, 50 examples, money, love, 369 vs 55x5, scripting, a free tracker and more.">
   <link rel="canonical" href="{SITE}/guides/">
   <meta name="theme-color" content="#faf6f0">
   <meta property="og:type" content="website">
@@ -419,11 +419,11 @@ def hub():
   <meta property="og:image" content="{SITE}/assets/img/og.jpg">
   <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site.css?v=20261118f">
   <script type="application/ld+json">
 {json.dumps(ld, indent=2, ensure_ascii=False)}
   </script>
-  <script src="/assets/analytics.js" defer></script>
+  <script src="/assets/analytics.js?v=20261118" defer></script>
 </head>
 <body>
 {HEADER}

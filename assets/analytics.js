@@ -17,3 +17,9 @@ document.addEventListener("click", function (event) {
   if (!link) return;
   posthog.capture("website app store clicked", { cta: link.getAttribute("data-cta"), page: location.pathname });
 });
+
+document.addEventListener("click", function (event) {
+  var link = event.target.closest && event.target.closest("a[data-book]");
+  if (!link) return;
+  posthog.capture("website book clicked", { book: link.getAttribute("data-book"), src: link.getAttribute("data-src"), page: location.pathname });
+});

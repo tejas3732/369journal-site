@@ -14,6 +14,8 @@ APP = "https://apps.apple.com/app/apple-store/id6770804298?pt=128923117&amp;ct={
 
 GUIDES = [
     ("/369-method/", "How to do the 369 method", "Step by step, with 21, 33 or 45 days"),
+    ("/scripting-manifestation/", "Scripting manifestation", "How to script a desire, with examples"),
+    ("/new-year-manifestation-challenge/", "21-day New Year challenge", "A free 369 plan for 2027"),
     ("/369-method/examples/", "50 369 method examples", "Affirmations to copy for every area of life"),
     ("/369-method/money/", "369 method for money", "Wording, 15 money affirmations, daily action"),
     ("/369-method/love/", "369 method for love", "Self-love, a relationship or a specific person"),
@@ -51,7 +53,8 @@ def header(current):
             <a class="all" href="/guides/">All guides &rarr;</a>
           </div>
         </details>
-        {link("/369-method/tracker/", "Free tracker")}
+        {link("/tools/", "Free tools")}
+        {link("/books/", "Books")}
         {link("/faq/", "FAQ")}
       </nav>
       <a class="mobile-guides" href="/guides/">Guides</a>
@@ -79,6 +82,13 @@ def footer():
       <nav aria-label="Free tools">
         <h2>Free tools</h2>
         <ul>
+          <li><a href="/tools/">All free tools</a></li>
+          <li><a href="/vision-board-maker/">Vision board maker</a></li>
+          <li><a href="/affirmation-generator/">Affirmation generator</a></li>
+          <li><a href="/affirmation-wallpaper/">Affirmation wallpaper</a></li>
+          <li><a href="/letter-to-future-self/">Letter to your future self</a></li>
+          <li><a href="/journal-prompt-generator/">Journal prompts</a></li>
+          <li><a href="/angel-number-calculator/">Angel numbers</a></li>
           <li><a href="/369-method/tracker/">33-day tracker</a></li>
           <li><a href="/best-369-method-apps/">Best 369 apps</a></li>
           <li><a href="/faq/">FAQ</a></li>
@@ -87,6 +97,7 @@ def footer():
       <nav aria-label="About">
         <h2>369 Journal</h2>
         <ul>
+          <li><a href="/books/">Books</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="https://tejas3732.github.io/369-journal-legal/support.html">Support</a></li>
           <li><a href="https://tejas3732.github.io/369-journal-legal/privacy.html">Privacy</a></li>
@@ -124,10 +135,26 @@ def apply(file):
     s = s.replace('<img src="/assets/img/app-icon-512.png" alt="369 Journal app icon" width="64" height="64">',
                   '<img class="icon" src="/assets/img/app-icon-512.png" alt="369 Journal app icon" width="64" height="64">')
     if '<script src="/assets/site.js" defer></script>' not in s:
-        s = s.replace('<script src="/assets/analytics.js" defer></script>',
-                      '<script src="/assets/analytics.js" defer></script>\n  <script src="/assets/site.js" defer></script>')
+        s = re.sub(r'(<script src="/assets/analytics\.js(?:\?v=[\w-]+)?" defer></script>)',
+                   r'\1\n  <script src="/assets/site.js" defer></script>', s, count=1)
+    if 'name="apple-itunes-app"' not in s:
+        s = s.replace('<meta name="theme-color" content="#faf6f0">',
+                      '<meta name="theme-color" content="#faf6f0">\n  <meta name="apple-itunes-app" content="app-id=6770804298">', 1)
+    if GTAG_ID not in s:
+        s = s.replace("<head>", "<head>\n" + GTAG, 1)
     file.write_text(s)
     return True
+
+
+# Google tag (Google Tag Manager container), right after <head> on every page.
+GTAG_ID = "GTM-TMJRPR3Z"
+GTAG = f"""  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id={GTAG_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+  </script>"""
 
 
 def main():

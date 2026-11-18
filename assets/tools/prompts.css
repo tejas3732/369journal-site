@@ -1,0 +1,75 @@
+/* Journal prompt generator. Builds on site.css + tools.css tokens. */
+
+.prompt-stage {
+  position: relative;
+  border-radius: 24px;
+  padding: clamp(1.4rem, 4vw, 2.6rem);
+  background: radial-gradient(130% 110% at 0% 0%, #fffaf3 0%, var(--paper-deep) 100%);
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 60px -38px rgba(72, 43, 24, 0.45);
+}
+.prompt-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1rem; }
+.prompt-cat { font-size: 0.9rem; font-weight: 600; color: var(--clay-ink); }
+.seg-small span { padding: 0.35rem 0.75rem; font-size: 0.85rem; }
+
+.prompt-card { margin: clamp(1.2rem, 3vw, 1.8rem) 0 0; padding: 0; border: 0; min-height: 7.5rem; display: flex; align-items: center; }
+.prompt-card p {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(1.45rem, 3.4vw, 2.15rem);
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-wrap: balance;
+  max-width: 30ch;
+}
+.prompt-card.swap-out p { opacity: 0; transform: translateY(-6px); filter: blur(2px); transition: opacity 140ms var(--ease), transform 140ms var(--ease), filter 140ms var(--ease); }
+.prompt-card.swap-in p { animation: prompt-in 420ms var(--ease) both; }
+@keyframes prompt-in { from { opacity: 0; transform: translateY(8px); filter: blur(3px); } to { opacity: 1; transform: none; filter: none; } }
+
+.prompt-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: clamp(1.2rem, 3vw, 1.8rem); }
+.prompt-actions .btn.ghost { background: rgba(255, 253, 249, 0.7); }
+.prompt-actions .btn.is-saved { background: var(--ink); color: #fff; box-shadow: none; }
+.prompt-actions .btn.is-saved svg path { fill: currentColor; }
+.prompt-tip { margin: 1rem 0 0; color: var(--muted); font-size: 0.82rem; }
+.prompt-tip kbd { font: 600 0.75rem/1 var(--sans); padding: 0.18rem 0.4rem; border-radius: 6px; border: 1px solid rgba(28, 24, 20, 0.2); background: var(--surface); color: var(--ink-soft); }
+
+.saved-head .t-step { margin-bottom: 0.6rem; }
+.saved-count { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; color: var(--muted); background: rgba(28, 24, 20, 0.06); border-radius: 999px; padding: 0.1rem 0.5rem; }
+.saved-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; counter-reset: saved; }
+.saved-list li { counter-increment: saved; display: grid; grid-template-columns: auto 1fr auto; gap: 0.7rem; align-items: start; padding: 0.75rem 0.4rem 0.75rem 0.85rem; border-radius: 14px; background: var(--paper); border: 1px solid var(--line); animation: saved-in 260ms var(--ease) both; }
+.saved-list li::before { content: counter(saved); font-size: 0.78rem; font-weight: 700; color: var(--clay-ink); padding-top: 0.15rem; min-width: 1rem; }
+.saved-list p { margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--ink); }
+.saved-remove { width: 2rem; height: 2rem; border-radius: 10px; border: 0; background: transparent; color: var(--muted); display: grid; place-items: center; cursor: pointer; transition: background-color 160ms var(--ease), color 160ms var(--ease); }
+.saved-remove:hover { background: rgba(28, 24, 20, 0.06); color: var(--ink); }
+.saved-remove svg { width: 0.9rem; height: 0.9rem; }
+@keyframes saved-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* Printable sheet: hidden on screen, the only thing printed. */
+.prompt-print { display: none; }
+
+@media (max-width: 560px) {
+  .prompt-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .prompt-actions .btn.clay { flex-basis: 100%; }
+  .prompt-tip { display: none; }
+}
+@media (hover: none) { .prompt-tip { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .prompt-card.swap-in p, .saved-list li { animation: none; }
+  .prompt-card.swap-out p { transition: none; }
+}
+
+@media print {
+  @page { size: A4 portrait; margin: 14mm; }
+  body { background: #fff; }
+  [data-tool="journal-prompt-generator"] .print-hide, .t-toast, .sticky-get { display: none !important; }
+  .prompt-print { display: block; color: #1c1814; }
+  .prompt-print h2 { font-family: var(--serif); font-size: 18pt; margin: 0; }
+  .pp-sub { font-size: 9.5pt; color: #6e6052; margin: 2mm 0 5mm; }
+  .prompt-print ol { margin: 0; padding-left: 6mm; }
+  .prompt-print li { break-inside: avoid; margin: 0 0 4mm; font-size: 10.5pt; }
+  .prompt-print li p { margin: 0 0 1.5mm; line-height: 1.35; }
+  .pp-lines { height: 18mm; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 5.6mm, rgba(28, 24, 20, 0.28) 5.6mm, rgba(28, 24, 20, 0.28) calc(5.6mm + 0.25pt)); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pp-foot { margin-top: 4mm; font-size: 8pt; color: #6e6052; }
+}
