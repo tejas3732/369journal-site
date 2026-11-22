@@ -99,7 +99,7 @@ ARTICLE = """      <h2 id="how">How to make a vision board that you&rsquo;ll act
 
       <h2 id="use">How to use it every day</h2>
       <p>A vision board is a reminder, not a spell. It works best when you look at it on purpose for a few seconds and then do one small thing that points toward it. Many people pair it with a short written ritual such as the <a href="/369-method/">369 method</a>: one affirmation written 3, 6 and 9 times a day. Need words for yours? Try the <a href="/affirmation-generator/">free affirmation generator</a>.</p>
-      <p>Making one for the new year? Put <a href="/word-of-the-year/">your Word of the Year</a> in the middle of the board, and use our <a href="/new-year-manifestation-challenge/">21-day New Year challenge</a> for one small task a day to go with it.</p>
+      <p>Making one for the new year? Put <a href="/word-of-the-year/">your Word of the Year</a> in the middle of the board, and use our <a href="/new-year-manifestation-challenge/">21-day New Year challenge</a> for one small task a day to go with it. Prefer a board on paper? Print one of our <a href="/vision-board-templates/">free vision board templates</a>, with 100 ideas to fill it.</p>
 """
 
 FAQ = [

@@ -231,7 +231,7 @@ def tool():
       <p>A personal year is a nine-year cycle that numerology uses to describe the tone of each year for you. Add your birth month, your birth day and the year you want, reducing each to a single digit first, then reduce the total to one digit. For 2027 the year part is 2 + 0 + 2 + 7 = 11, then 1 + 1 = 2.</p>
       <p>Here is what each personal year traditionally stands for. Many people read their number at the start of January and again in December, as a gentle way to plan the next twelve months.</p>
       {py_table()}
-      <p>This is a prompt, not a forecast. A year labelled &ldquo;3&rdquo; does not guarantee anything. It simply suggests a question: where could I make more room for creativity this year? To turn that into one clear focus, pair your personal year with a <a href="/word-of-the-year/">Word of the Year</a>.</p>
+      <p>This is a prompt, not a forecast. A year labelled &ldquo;3&rdquo; does not guarantee anything. It simply suggests a question: where could I make more room for creativity this year? To turn that into one clear focus, pair your personal year with a <a href="/word-of-the-year/">Word of the Year</a>. For a month-by-month view of 2027, use the <a href="/personal-year-number-calculator/">personal year number calculator</a>.</p>
 
       <h2 id="name">Name numbers explained</h2>
       <p>Name numbers give each letter a value from 1 to 9 using the Pythagorean chart (A, J and S are 1; B, K and T are 2; and so on down to I and R, which are 9). Add the values, reduce the total, and you have a number.</p>
@@ -246,7 +246,8 @@ def tool():
         <li><strong>Read the question</strong> under your life path number and answer it in one honest sentence.</li>
         <li><strong>Read your personal year suggestion</strong> and pick one small action for this week.</li>
         <li><strong>Turn your affirmation into your own words</strong> with the <a href="/journal-prompt-generator/">journal prompt generator</a>, then keep it in front of you with the <a href="/369-method/">369 method</a>: write it 3 times in the morning, 6 in the afternoon and 9 at night.</li>
-        <li><strong>Seeing a number again and again?</strong> Look it up in the <a href="/angel-number-calculator/">angel number calculator</a>, or read <a href="/369-meaning/">what 369 means</a>.</li>
+        <li><strong>Seeing a number again and again?</strong> Look it up in the <a href="/angel-number-calculator/">angel number calculator</a>, read the full pages for <a href="/angel-numbers/111/">111</a>, <a href="/angel-numbers/444/">444</a>, <a href="/angel-numbers/1111/">1111</a> and <a href="/angel-numbers/">every other common number</a>, or read <a href="/369-meaning/">what 369 means</a>.</li>
+        <li><strong>Want just one number?</strong> Use the focused <a href="/life-path-number-calculator/">life path calculator</a> (with compatibility) or the <a href="/name-numerology-calculator/">name numerology calculator</a> (letter by letter).</li>
       </ol>"""
 
     p = {

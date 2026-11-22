@@ -122,8 +122,8 @@ ARTICLE = f"""      <h2 id="what">What is a Word of the Year?</h2>
         <li><strong>Turn it into an affirmation.</strong> &ldquo;In 2027, I choose to be brave&rdquo; is something you can write daily. The <a href="/369-method/">369 method</a> is a simple way: write it 3 times in the morning, 6 in the afternoon and 9 at night.</li>
         <li><strong>Add it to a vision board.</strong> Put your word in the middle of a <a href="/vision-board-maker/">vision board</a> and surround it with pictures of what it looks like.</li>
         <li><strong>Check in monthly.</strong> Ask: where did my word show up this month, and where did I forget it? A <a href="/journal-prompt-generator/">journal prompt</a> helps on days you don&rsquo;t know what to write.</li>
-        <li><strong>Go deeper.</strong> Some people pair their word with their <a href="/numerology-calculator/">2027 personal year number</a>. If your word is &ldquo;grateful&rdquo; or &ldquo;savor&rdquo;, our <a href="/gratitude-journal-prompts/">gratitude journal prompts</a> give you something to write each day.</li>
-        <li><strong>Start with a short challenge.</strong> Our free <a href="/new-year-manifestation-challenge/">21-day New Year challenge</a> gives you one small task a day to build the habit.</li>
+        <li><strong>Go deeper.</strong> Some people pair their word with their <a href="/personal-year-number-calculator/">2027 personal year number</a>. If your word is &ldquo;grateful&rdquo; or &ldquo;savor&rdquo;, our <a href="/gratitude-journal-prompts/">gratitude journal prompts</a> give you something to write each day.</li>
+        <li><strong>Start with a short challenge.</strong> Our free <a href="/new-year-manifestation-challenge/">21-day New Year challenge</a> gives you one small task a day to build the habit. For more goals to pick from, see <a href="/new-year-resolution-ideas/">100 New Year resolution ideas</a>.</li>
       </ul>
 """
 

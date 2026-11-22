@@ -404,7 +404,7 @@ PAGES.append({
     "lede": "Most New Year goals are forgotten by mid-January. This challenge starts earlier and stays small: one desire, the 369 method every day, and one task a day for 21 days. Start on 11 December to finish on New Year&rsquo;s Eve, or on 1 January to begin the year with it.",
     "body": """      <h2 id="how">How the challenge works</h2>
       <ul>
-        <li><strong>One desire for 2027.</strong> Pick the one that would change your year most. Not sure where to start? <a href="/word-of-the-year/">Find your Word of the Year</a> in five questions, then build your desire around it.</li>
+        <li><strong>One desire for 2027.</strong> Pick the one that would change your year most. Not sure where to start? <a href="/word-of-the-year/">Find your Word of the Year</a> in five questions, browse <a href="/new-year-resolution-ideas/">100 New Year resolution ideas</a>, or check your <a href="/personal-year-number-calculator/">2027 personal year number</a>, then build your desire around it.</li>
         <li><strong>The 369 method every day:</strong> your affirmation 3 times in the morning, 6 in the afternoon and 9 at night. New to it? Read <a href="/369-method/">how to do the 369 method</a>.</li>
         <li><strong>One small task a day</strong> from the plan below. Most take five to ten minutes.</li>
         <li><strong>Two start dates:</strong> 11 to 31 December (finish on New Year&rsquo;s Eve) or 1 to 21 January.</li>

@@ -211,10 +211,10 @@ PAGES.append({
         ["Windfall", "Unexpected money finds its way to me."],
         ["Generosity", "I have plenty to enjoy and plenty to share."],
     ]) + """
-      <p>Change the amounts to fit your life. Copy one, make it yours, and keep it the same for the whole cycle.</p>
+      <p>Change the amounts to fit your life. Copy one, make it yours, and keep it the same for the whole cycle. Want more choice? Browse <a href="/money-affirmations/">70 money affirmations</a> grouped by saving, earning, debt and career.</p>
 
       <h2 id="action">Pair it with one money action a day</h2>
-      <p>Writing keeps the goal in front of you; action moves it. Pick one small step each day, such as checking a balance, cancelling an unused subscription, updating your CV, or sending one pitch. Many people log these in the evening, after the night session.</p>
+      <p>Writing keeps the goal in front of you; action moves it. Pick one small step each day, such as checking a balance, cancelling an unused subscription, updating your CV, or sending one pitch. Many people log these in the evening, after the night session. To plan the bigger goal behind it, fill in the free <a href="/goal-setting-worksheet/">goal setting worksheet</a>.</p>
 
       <h2 id="evidence">Does the 369 method work for money?</h2>
       <p>There is no scientific evidence that writing an affirmation brings money by itself. What it can do is keep your goal visible three times a day, which makes it easier to notice opportunities, stick to a plan and act on it. Use it as a focus ritual alongside practical steps, never instead of financial advice.</p>
@@ -267,6 +267,8 @@ PAGES.append({
         ["After a breakup", "I am healing, and my heart is open to the love that is right for me."],
         ["Friendship and family", "I am surrounded by people who love and support me."],
     ]) + """
+
+      <p>Starting with yourself? Our list of <a href="/self-love-affirmations/">72 self-love affirmations</a> covers worth, body, boundaries and healing.</p>
 
       <h2 id="evidence">Does the 369 method work for love?</h2>
       <p>No ritual can make another person feel something. There is no scientific evidence that writing an affirmation changes someone else&rsquo;s choices. What the 369 method can do is keep your attention on the love you want, which often changes how open, confident and present you are, and that changes relationships.</p>
@@ -324,6 +326,7 @@ PAGES.append({
         <li><strong>Keep the exact words.</strong> Write the same sentence 3, 6 and 9 times each day.</li>
         <li><strong>Read it before you write it.</strong> A slow read first helps you mean it, not just copy it.</li>
       </ul>
+      <p>Want more to choose from? See <a href="/morning-affirmations/">70 morning affirmations</a>, <a href="/self-love-affirmations/">72 self-love affirmations</a> and <a href="/money-affirmations/">70 money affirmations</a>, or let the <a href="/affirmation-generator/">affirmation generator</a> write one for your situation.</p>
 """,
     "faq": [
         ("What is a good example of a 369 method affirmation?", "A good 369 affirmation is short, in the present tense and believable, for example: I am so grateful that money comes to me easily and often, or I am thriving in a job that fits me perfectly."),
@@ -407,6 +410,21 @@ def hub():
         ("/gratitude-journal-prompts/", "Gratitude journal prompts", "108 prompts and a printable 30-day journal"),
         ("/angel-number-calculator/", "Angel number meanings", "Look up a number you keep seeing"),
         ("/numerology-calculator/", "Numerology calculator", "Life path, name and 2027 personal year"),
+        ("/vision-board-templates/", "Printable vision board templates", "Six layouts plus 100 vision board ideas"),
+        ("/habit-tracker-printable/", "Printable habit tracker", "Build your own monthly sheet for 2027"),
+        ("/goal-setting-worksheet/", "Goal setting worksheet", "Fill it in, then print one clear page"),
+    ]
+    lists = [
+        ("/morning-affirmations/", "70 morning affirmations", "Short, calm lines to start the day"),
+        ("/self-love-affirmations/", "72 self-love affirmations", "Worth, body, boundaries and healing"),
+        ("/money-affirmations/", "70 money affirmations", "Each group paired with one real action"),
+        ("/new-year-resolution-ideas/", "100 New Year resolution ideas", "Plus a picker to make one stick in 2027"),
+    ]
+    numbers = [
+        ("/angel-numbers/", "Angel numbers 111 to 1212", "A page for each number you keep seeing"),
+        ("/life-path-number-calculator/", "Life path number calculator", "Your number, meaning and compatibility"),
+        ("/personal-year-number-calculator/", "2027 personal year calculator", "Your theme for 2027, month by month"),
+        ("/name-numerology-calculator/", "Name numerology calculator", "Destiny, soul urge and personality numbers"),
     ]
     allg = {h: (h, t, d) for h, t, d in list(layout.GUIDES) + more}
     pick = lambda *hs: [allg[h] for h in hs]
@@ -419,7 +437,7 @@ def hub():
         "@type": "CollectionPage",
         "name": "369 method guides",
         "url": f"{SITE}/guides/",
-        "hasPart": [{"@type": "WebPage", "name": t, "url": f"{SITE}{h}"} for h, t, _ in list(allg.values()) + tools],
+        "hasPart": [{"@type": "WebPage", "name": t, "url": f"{SITE}{h}"} for h, t, _ in list(allg.values()) + tools + lists + numbers],
     }
     return f"""<!doctype html>
 <html lang="en">
@@ -464,6 +482,14 @@ def hub():
       <h2>Understand the numbers</h2>
       <div class="guides" style="grid-template-columns:1fr">
 {guide_rows(understand)}
+      </div>
+      <h2>Affirmations and New Year ideas</h2>
+      <div class="guides" style="grid-template-columns:1fr">
+{guide_rows(lists)}
+      </div>
+      <h2>Angel numbers and numerology</h2>
+      <div class="guides" style="grid-template-columns:1fr">
+{guide_rows(numbers)}
       </div>
       <h2>Compare</h2>
       <div class="guides" style="grid-template-columns:1fr">

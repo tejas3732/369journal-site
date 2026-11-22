@@ -27,6 +27,11 @@ TOOLS = [
     ("/vision-board-templates/", "Vision board templates", "Six printable layouts and 100 ideas"),
     ("/habit-tracker-printable/", "Printable habit tracker", "Build your own monthly sheet"),
     ("/morning-affirmations/", "Morning affirmations", "Short lines to start the day"),
+    ("/self-love-affirmations/", "Self-love affirmations", "Kind words for worth and boundaries"),
+    ("/money-affirmations/", "Money affirmations", "Each with one small real action"),
+    ("/new-year-resolution-ideas/", "New Year resolution ideas", "100 ideas and a picker for 2027"),
+    ("/goal-setting-worksheet/", "Goal setting worksheet", "Fill it in, print one clear page"),
+    ("/name-numerology-calculator/", "Name numerology", "Destiny and soul urge, letter by letter"),
     ("/gratitude-journal-prompts/", "Gratitude journal prompts", "108 prompts and a printable journal"),
 ]
 

@@ -224,7 +224,7 @@ def tool():
     <script type="application/json" id="angel-data">{json.dumps(DATA, ensure_ascii=False)}</script>"""
 
     article = f"""      <h2 id="what">What are angel numbers?</h2>
-      <p>Angel numbers are repeating or patterned numbers, such as 111, 444 or 1212, that some people notice again and again: on a clock, a receipt or a number plate. The idea comes from numerology and modern spiritual communities, where each digit has long carried its own associations. Curious about the numbers in your own birthday and name? Try the free <a href="/numerology-calculator/">numerology calculator</a>.</p>
+      <p>Angel numbers are repeating or patterned numbers, such as 111, 444 or 1212, that some people notice again and again: on a clock, a receipt or a number plate. The idea comes from numerology and modern spiritual communities, where each digit has long carried its own associations. Curious about the numbers in your own birthday and name? Try the free <a href="/life-path-number-calculator/">life path number calculator</a> or the <a href="/name-numerology-calculator/">name numerology calculator</a>. Each common number also has its own page, for example <a href="/angel-numbers/444/">444</a>, <a href="/angel-numbers/555/">555</a>, <a href="/angel-numbers/1111/">1111</a>.</p>
       <p>To be straightforward with you: there is no scientific evidence that numbers carry messages. Our minds are pattern-finders, and we notice what we are already thinking about. Many people still find angel numbers helpful as a small, everyday reminder to pause, breathe and check in with what they want. That is how this tool is meant to be used.</p>
 
       <h2 id="use">How to use an angel number as a reflection prompt</h2>
@@ -294,7 +294,8 @@ def meaning_page():
       <p>Put together, people often read 369 as a small story: <em>say what you want, care for it every day, then let it go and trust the process</em>.</p>
 
       <h2 id="angel">369 as an angel number</h2>
-      <p>If 369 keeps appearing on clocks, receipts or tickets, people commonly take it as a nudge to restate their intention. Its reverse, 963, is often linked with looking back on progress, and 639 with connection and love.</p>
+      <p>If 369 keeps appearing on clocks, receipts or tickets, people commonly take it as a nudge to restate their intention. Its reverse, 963, is often linked with looking back on progress, and 639 with connection and love. Read the full <a href="/angel-numbers/369/">369 angel number meaning</a> for love, money and what to do when you see it.</p>
+      <p>Seeing a different number? We have a page for each of the most common ones: <a href="/angel-numbers/111/">111</a>, <a href="/angel-numbers/222/">222</a>, <a href="/angel-numbers/333/">333</a>, <a href="/angel-numbers/444/">444</a>, <a href="/angel-numbers/555/">555</a>, <a href="/angel-numbers/777/">777</a>, <a href="/angel-numbers/999/">999</a>, <a href="/angel-numbers/1010/">1010</a>, <a href="/angel-numbers/1111/">1111</a> and <a href="/angel-numbers/1212/">1212</a>, plus <a href="/angel-numbers/">all angel numbers in one place</a>.</p>
       <p>We want to be honest: there is no scientific evidence that numbers carry messages. Our minds notice what we are already thinking about. That doesn't make the moment useless. Many people use it as a cue to pause and ask themselves one question.</p>
       <div class="an-mini">
         <p><strong>Look up 369, or any number you keep seeing.</strong> Free, with a reflection question and an affirmation for each.</p>
