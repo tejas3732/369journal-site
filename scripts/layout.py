@@ -304,25 +304,26 @@ def apply_related(s, cur):
 # ---------------------------------------------------------------------------
 # "Personalise it for me" AI panel (assets/ai.js, Claude Haiku 5.5 via 369-journal-api /api/web-ai).
 # path -> (mode, extra data attributes). layout.py inserts it after each page's tool.
-AI_V = "20261122a"
+AI_V = "20261122b"
+TOOL_HEAD_RE = re.compile(r'<div class="tool-head[^"]*">\s*<div class="wrap">.*?</div>\s*</div>', re.S)
 _ANGEL = ["111", "222", "333", "444", "555", "777", "999", "1010", "1111", "1212", "369"]
 AI_PAGES = {
     "/affirmation-generator/": ("affirm", {}),
-    "/morning-affirmations/": ("affirm", {"area": "morning"}),
-    "/self-love-affirmations/": ("affirm", {"area": "selflove"}),
-    "/money-affirmations/": ("affirm", {"area": "money"}),
+    "/morning-affirmations/": ("affirm", {"area": "morning", "top": "1"}),
+    "/self-love-affirmations/": ("affirm", {"area": "selflove", "top": "1"}),
+    "/money-affirmations/": ("affirm", {"area": "money", "top": "1"}),
     "/angel-number-calculator/": ("angel", {}),
-    "/angel-numbers/": ("angel", {}),
+    "/angel-numbers/": ("angel", {"top": "1"}),
     **{f"/angel-numbers/{n}/": ("angel", {"number": n}) for n in _ANGEL},
     "/numerology-calculator/": ("numerology", {}),
     "/life-path-number-calculator/": ("numerology", {}),
     "/name-numerology-calculator/": ("numerology", {}),
     "/personal-year-number-calculator/": ("numerology", {}),
     "/new-year-resolution-ideas/": ("resolution", {"kind": "resolution"}),
-    "/goal-setting-worksheet/": ("resolution", {"kind": "goal"}),
+    "/goal-setting-worksheet/": ("resolution", {"kind": "goal", "top": "1"}),
     "/scripting-manifestation/": ("scripting", {"book": "scripting"}),
     "/journal-prompt-generator/": ("scripting", {"book": "scripting"}),
-    "/letter-to-future-self/": ("letter", {}),
+    "/letter-to-future-self/": ("letter", {"top": "1"}),
 }
 AI_RE = re.compile(r"\s*<!-- ai -->.*?<!-- /ai -->", re.S)
 AI_HEAD_RE = re.compile(r"\s*<!-- ai-head -->.*?<!-- /ai-head -->", re.S)
@@ -334,12 +335,17 @@ def apply_ai(s, cur):
     if cur not in AI_PAGES:
         return s
     mode, extra = AI_PAGES[cur]
-    attrs = "".join(f' data-{k}="{v}"' for k, v in extra.items())
-    panel = f'\n    <!-- ai -->\n    <section class="ai print-hide" data-ai="{mode}"{attrs}></section>\n    <!-- /ai -->'
-    for anchor in ('\n  <section class="tool-next', '\n    <article class="narrow prose'):
-        if anchor in s:
-            s = s.replace(anchor, panel + anchor, 1)
-            break
+    top = extra.get("top") == "1"
+    attrs = "".join(f' data-{k}="{v}"' for k, v in extra.items() if k != "top")
+    panel = f'\n    <!-- ai -->\n    <section class="ai print-hide{" ai-top" if top else ""}" id="ai" data-ai="{mode}"{attrs}></section>\n    <!-- /ai -->'
+    m = TOOL_HEAD_RE.search(s) if top else None
+    if m:
+        s = s[:m.end()] + panel + s[m.end():]
+    else:
+        for anchor in ('\n  <section class="tool-next', '\n    <article class="narrow prose'):
+            if anchor in s:
+                s = s.replace(anchor, panel + anchor, 1)
+                break
     head = (f'\n  <!-- ai-head -->\n  <link rel="stylesheet" href="/assets/ai.css?v={AI_V}">\n'
             f'  <script src="/assets/ai.js?v={AI_V}" defer></script>\n  <!-- /ai-head -->')
     return s.replace("\n</head>", head + "\n</head>", 1)

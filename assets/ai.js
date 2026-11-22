@@ -160,6 +160,26 @@
   [head, lede, form, note, status, out, recent].forEach(function (n) { inner.appendChild(n); });
   root.appendChild(inner);
 
+  // A small button in the page's top section, so the panel is found without scrolling.
+  var hero = document.querySelector(".tool-head .wrap, .article-head");
+  if (hero && !root.classList.contains("ai-top")) {
+    var teaser = el("a", "ai-teaser");
+    teaser.href = "#ai";
+    var ts = el("span", "ai-teaser-spark", "✦"); ts.setAttribute("aria-hidden", "true");
+    teaser.appendChild(ts);
+    teaser.appendChild(el("span", null, { affirm: "Write affirmations just for me", angel: "What does it mean for me?", numerology: "Get my personal 2027 reading", resolution: "Make my resolution stick", scripting: "Write my first script with AI", letter: "Help me start my letter" }[mode]));
+    teaser.appendChild(el("span", "ai-teaser-free", "Free · AI"));
+    teaser.addEventListener("click", function (e) {
+      e.preventDefault();
+      root.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+      var first = form.querySelector("textarea, input");
+      if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, 450);
+      track("website ai teaser clicked", { mode: mode });
+    });
+    var meta = hero.querySelector(".meta");
+    hero.insertBefore(teaser, meta || null);
+  }
+
   // ------------------------------------------------------------ Turnstile (optional bot check)
   var tsToken = "", tsWidget = null;
   function loadTurnstile() {
