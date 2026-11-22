@@ -1,0 +1,40 @@
+/* Numerology pages (personal year, name, life path). Loaded after numerology.css, which supplies the nu- styles. Prefix nup-. */
+.nup-fs { border: 0; margin: 0; padding: 0; min-width: 0; }
+.nup-fs + .nup-fs, .nup-fs + .nu-gap { margin-top: 1.2rem; }
+.nup-row { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 0.7rem; }
+.nup-row .t-label { font-weight: 500; font-size: 0.82rem; }
+.t-select { appearance: auto; }
+
+.nup-strip { list-style: none; margin: 0.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(5.2rem, 1fr)); gap: 0.5rem; }
+.nup-strip li { display: grid; justify-items: center; gap: 0.1rem; padding: 0.6rem 0.3rem; border-radius: 14px; background: var(--paper); text-align: center; }
+.nup-mo { font-size: 0.78rem; font-weight: 600; color: var(--muted); }
+.nup-n { font-family: var(--serif); font-weight: 700; font-size: 1.7rem; line-height: 1.1; color: var(--ink); font-variant-numeric: lining-nums; }
+.nup-w { font-size: 0.74rem; color: var(--clay-ink); }
+
+.nup-words { display: grid; gap: 0.6rem; margin-top: 0.5rem; }
+.nup-letters { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.nup-letters li { display: grid; justify-items: center; min-width: 1.9rem; padding: 0.25rem 0.2rem; border-radius: 9px; border: 1px solid var(--line); background: var(--surface); }
+.nup-letters li.nup-vowel { background: rgba(199, 148, 63, 0.16); border-color: rgba(199, 148, 63, 0.4); }
+.nup-l { font-weight: 700; font-size: 0.95rem; color: var(--ink); line-height: 1.2; }
+.nup-v { font-size: 0.78rem; color: var(--clay-ink); font-variant-numeric: tabular-nums; line-height: 1.2; }
+
+.nup-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.nup-table th, .nup-table td { padding: 0.55rem 0.7rem; text-align: left; border-bottom: 1px solid var(--line); }
+
+.nup-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; margin-top: 1.1rem; }
+.nup-two .nu-name p { margin-top: 0.2rem; }
+.nup-pair { display: flex; align-items: center; gap: 1.2rem; margin-top: 0.4rem; }
+.nup-pair .nu-big { margin: 0; }
+.nup-amp { margin: 0; font-size: 1.6rem; color: var(--muted); }
+.nup-level { display: inline-block; margin: 0.9rem 0 0; padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.86rem; font-weight: 600; }
+.nup-l-easy { background: rgba(99, 140, 90, 0.16); color: #3f6439; }
+.nup-l-comp { background: rgba(199, 148, 63, 0.18); color: #805a1c; }
+.nup-l-care { background: rgba(176, 89, 51, 0.12); color: var(--clay-ink); }
+
+.nup-guide h3 { margin-top: 1.4rem; }
+.nup-aff-q { color: var(--ink-soft); font-style: italic; }
+
+@media (max-width: 480px) {
+  .nup-two { grid-template-columns: minmax(0, 1fr); }
+  .nup-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

@@ -75,6 +75,8 @@
 /* Toast for "Saved", "Copied" */
 .t-toast { position: fixed; left: 50%; bottom: 1.4rem; transform: translate(-50%, 12px); opacity: 0; pointer-events: none; background: var(--ink); color: #fff; font-size: 0.9rem; padding: 0.6rem 1rem; border-radius: 999px; box-shadow: var(--shadow); transition: opacity 200ms var(--ease), transform 260ms var(--ease); z-index: 60; }
 .t-toast.show { opacity: 1; transform: translate(-50%, 0); }
+/* Sit above the sticky App Store bar on phones */
+body:has(.sticky-get.show) .t-toast { bottom: calc(5.6rem + env(safe-area-inset-bottom, 0px)); }
 
 /* Next steps under a tool: books + app */
 .tool-next { width: min(72rem, 100% - 2rem); margin: 0 auto clamp(3rem, 6vw, 5rem); }

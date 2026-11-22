@@ -1,0 +1,62 @@
+/* Goal setting worksheet. Reuses the .ht-* layout helpers from habit-tracker.css. */
+
+.gw-pairs { display: grid; gap: 0.6rem; }
+.gw-pair { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.4rem 0.6rem; align-items: center; padding: 0.7rem; border-radius: 14px; background: var(--paper); border: 1px solid var(--line); }
+.gw-tag { font-size: 0.78rem; font-weight: 700; color: var(--clay-ink); text-align: right; min-width: 2rem; }
+.gw-steps { display: grid; gap: 0.5rem; }
+/* Layout helpers (same as the habit tracker page) */
+.gw-shell { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
+.gw-shell .tool-controls { grid-template-columns: minmax(0, 1fr); }
+.ht-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.2rem; margin-bottom: 1rem; }
+@media (min-width: 900px) { .gw-shell .tool-controls { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .gw-shell .tool-controls .tool-panel:first-child { grid-row: span 2; } }
+.gw-shell .ht-actions { align-items: center; }
+.gw-shell .ht-actions .privacy-note { flex-basis: 100%; }
+
+.gw-scroll { overflow-x: auto; padding: 0.4rem 0 1rem; }
+.gw-sheet { background: #fff; color: #1c1814; border: 1px solid var(--line); border-radius: 14px; padding: clamp(1rem, 3vw, 2rem); box-shadow: 0 30px 60px -38px rgba(72, 43, 24, 0.45); max-width: 48rem; margin: 0 auto; min-width: 30rem; }
+.gw-title { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 2px solid #1c1814; padding-bottom: 0.4rem; margin-bottom: 0.9rem; }
+.gw-title h2 { font-family: var(--serif); font-size: 1.55rem; margin: 0; letter-spacing: -0.01em; }
+.gw-title p { margin: 0; font-size: 0.85rem; color: #6e6052; }
+.gw-blank { display: inline-block; width: 6rem; border-bottom: 1px solid #1c1814; }
+.gw-block { margin-bottom: 0.9rem; break-inside: avoid; }
+.gw-block h3 { font: 700 0.82rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: #974622; margin: 0 0 0.2rem; }
+.gw-block h3 span { text-transform: none; letter-spacing: 0; font-weight: 400; color: #6e6052; }
+.gw-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.2rem; }
+.gw-val { margin: 0; font-family: var(--serif); font-size: 1.02rem; line-height: 1.9rem; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.9rem - 1px), #cfc4b4 calc(1.9rem - 1px), #cfc4b4 1.9rem); overflow-wrap: anywhere; }
+.gw-val { min-height: calc(var(--n, 1) * 1.9rem); }
+.gw-val.gw-short { min-height: 0; }
+.gw-lines .gw-line, .gw-line { display: block; height: 1.9rem; border-bottom: 1px solid #cfc4b4; }
+.gw-line.gw-short { width: 14rem; }
+.gw-by .gw-val { width: 14rem; max-width: 100%; }
+.gw-if, .gw-steps-l { list-style: none; margin: 0; padding: 0; }
+.gw-if li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1.4fr); gap: 0.5rem; align-items: end; min-height: 1.9rem; margin: 0.15rem 0; }
+.gw-k { font-size: 0.78rem; font-weight: 700; color: #6e6052; padding-bottom: 0.15rem; }
+.gw-v { font-family: var(--serif); font-size: 0.98rem; line-height: 1.4; border-bottom: 1px solid #cfc4b4; min-height: 1.7rem; padding-bottom: 0.1rem; overflow-wrap: anywhere; }
+.gw-steps-l li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.6rem; align-items: end; margin: 0.15rem 0; min-height: 1.9rem; }
+.gw-box { width: 1.1rem; height: 1.1rem; border: 1.5px solid #1c1814; border-radius: 3px; margin-bottom: 0.3rem; }
+.gw-foot { margin: 0.9rem 0 0; font-size: 0.72rem; color: #6e6052; text-align: center; }
+
+@media (max-width: 560px) {
+  .gw-shell .ht-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .gw-pair { grid-template-columns: 1fr; }
+  .gw-tag { text-align: left; }
+}
+
+@media print {
+  html, body { background: #fff !important; }
+  .site-header, .site-footer, .sticky-get, .t-toast, .print-hide { display: none !important; }
+  main { padding: 0 !important; margin: 0 !important; }
+  .gw-shell { display: block; width: 100%; max-width: none; margin: 0; }
+  .gw-scroll { overflow: visible; padding: 0; }
+  .gw-sheet { border: 0; border-radius: 0; box-shadow: none; padding: 0; max-width: none; min-width: 0; width: 100%; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .gw-title h2 { font-size: 18pt; }
+  .gw-block { margin-bottom: 4mm; }
+  .gw-block h3 { font-size: 8pt; }
+  .gw-val { font-size: 10.5pt; line-height: 7mm; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(7mm - 0.3pt), #b9ad9d calc(7mm - 0.3pt), #b9ad9d 7mm); }
+  .gw-lines .gw-line, .gw-line { height: 7mm; border-bottom-width: 0.4pt; border-color: #8f8374; }
+  .gw-val { min-height: calc(var(--n, 1) * 7mm); }
+  .gw-val.gw-short { min-height: 0; }
+  .gw-v { font-size: 10pt; border-bottom-width: 0.4pt; border-color: #8f8374; min-height: 6.5mm; }
+  .gw-if li, .gw-steps-l li { min-height: 7.5mm; }
+  .gw-foot { font-size: 7.5pt; margin-top: 4mm; }
+}

@@ -4,14 +4,25 @@ from toolkit import ASSET_V, SITE, app_plug, crumbs, footer, head, write
 
 TOOLS = [
     ("/word-of-the-year/", "Find your Word of the Year", "Five quick questions, one word to guide your 2027, with an affirmation and a lock-screen image.", "New for 2027"),
+    ("/new-year-resolution-ideas/", "New Year resolution ideas", "100 ideas and a picker that turns one into an affirmation and a weekly action.", "For 2027"),
+    ("/personal-year-number-calculator/", "2027 personal year calculator", "Your numerology theme for 2027, with every month of the year mapped out.", "Month by month"),
+    ("/vision-board-templates/", "Printable vision board templates", "Six layouts to print or save as PDF, plus 100 vision board ideas by life area.", "A4 and US Letter"),
     ("/vision-board-maker/", "Vision board maker", "Add your photos and words, then save a phone wallpaper, desktop background or printable board.", "Phone, desktop, print"),
     ("/affirmation-generator/", "Affirmation generator", "Affirmations for money, love, health and more, plus a printable 369 sheet with your dates.", "With a 369 sheet"),
     ("/affirmation-wallpaper/", "Affirmation wallpaper", "Put your affirmation on your lock screen in a calm, readable style.", "iPhone and Android"),
     ("/letter-to-future-self/", "Letter to your future self", "Guided prompts, then a calendar reminder to open it on the day you choose. No email needed.", "6 months to 3 years"),
     ("/journal-prompt-generator/", "Journal prompt generator", "Manifestation, scripting, gratitude and future-self prompts, one at a time or 30 to print.", "112 prompts"),
-    ("/angel-number-calculator/", "Angel number meanings", "Look up a number you keep seeing, or find the number from your birthday.", "Including 369"),
-    ("/numerology-calculator/", "Numerology calculator", "Your life path number, name numbers and your 2027 personal year, with the maths shown.", "Life path and 2027"),
+    ("/morning-affirmations/", "Morning affirmations", "Short, calm lines to start the day. Save favourites, copy one or put it on your lock screen.", "Copy or save"),
+    ("/self-love-affirmations/", "Self-love affirmations", "Kind words for worth, body, boundaries and healing.", "Copy or save"),
+    ("/money-affirmations/", "Money affirmations", "Calm money lines, each paired with one small real action.", "With actions"),
+    ("/angel-numbers/", "Angel number meanings", "A page for each number you keep seeing, from 111 to 1212, with honest meanings.", "Including 369"),
+    ("/angel-number-calculator/", "Angel number lookup", "Look up any other number, or find the number from your birthday.", "Any number"),
+    ("/life-path-number-calculator/", "Life path number calculator", "Your life path number with the maths shown, plus a compatibility check.", "With compatibility"),
+    ("/name-numerology-calculator/", "Name numerology calculator", "Destiny, soul urge and personality numbers from your name, letter by letter.", "Letter by letter"),
+    ("/numerology-calculator/", "All-in-one numerology", "Life path, name numbers and your 2027 personal year on one page.", "Everything at once"),
     ("/gratitude-journal-prompts/", "Gratitude journal prompts", "108 prompts in 9 themes, a 3 good things mode, and a printable 30-day journal.", "Printable journal"),
+    ("/habit-tracker-printable/", "Printable habit tracker", "Type your habits, pick a month, print a clean tracker sheet.", "Monthly or weekly"),
+    ("/goal-setting-worksheet/", "Goal setting worksheet", "Fill it in on screen, then print one clear page with your plan.", "Fill in and print"),
     ("/369-method/tracker/", "Printable 33-day tracker", "One page to tick off your 3, 6 and 9 writing sessions on paper.", "Print or PDF"),
 ]
 

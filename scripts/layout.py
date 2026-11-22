@@ -90,8 +90,13 @@ def footer():
           <li><a href="/letter-to-future-self/">Letter to your future self</a></li>
           <li><a href="/journal-prompt-generator/">Journal prompts</a></li>
           <li><a href="/gratitude-journal-prompts/">Gratitude prompts</a></li>
-          <li><a href="/angel-number-calculator/">Angel numbers</a></li>
-          <li><a href="/numerology-calculator/">Numerology calculator</a></li>
+          <li><a href="/angel-numbers/">Angel number meanings</a></li>
+          <li><a href="/life-path-number-calculator/">Life path calculator</a></li>
+          <li><a href="/personal-year-number-calculator/">2027 personal year</a></li>
+          <li><a href="/vision-board-templates/">Vision board templates</a></li>
+          <li><a href="/new-year-resolution-ideas/">Resolution ideas</a></li>
+          <li><a href="/habit-tracker-printable/">Habit tracker</a></li>
+          <li><a href="/morning-affirmations/">Morning affirmations</a></li>
           <li><a href="/369-method/tracker/">33-day tracker</a></li>
           <li><a href="/best-369-method-apps/">Best 369 apps</a></li>
           <li><a href="/faq/">FAQ</a></li>
@@ -146,6 +151,7 @@ def apply(file):
     if GTAG_ID not in s:
         s = s.replace("<head>", "<head>\n" + GTAG, 1)
     s = apply_related(s, cur)
+    s = apply_ai(s, cur)
     file.write_text(s)
     return True
 
@@ -198,6 +204,20 @@ PAGES = {
     "/word-of-the-year/": ("Find your Word of the Year", "Five questions, one word for 2027"),
     "/numerology-calculator/": ("Numerology calculator", "Life path, name and 2027 personal year"),
     "/gratitude-journal-prompts/": ("Gratitude journal prompts", "108 prompts and a printable journal"),
+    "/angel-numbers/": ("Angel numbers 111 to 1212", "A page for each number you keep seeing"),
+    "/angel-numbers/444/": ("444 angel number meaning", "Stability, love, money and what to do"),
+    "/angel-numbers/1111/": ("1111 meaning", "Alignment, wishes and a calm next step"),
+    "/angel-numbers/369/": ("369 angel number", "The number behind the 369 method"),
+    "/personal-year-number-calculator/": ("2027 personal year calculator", "Your theme for 2027, month by month"),
+    "/name-numerology-calculator/": ("Name numerology calculator", "Destiny, soul urge and personality numbers"),
+    "/life-path-number-calculator/": ("Life path number calculator", "Your number, meaning and compatibility"),
+    "/vision-board-templates/": ("Printable vision board templates", "Six layouts plus 100 vision board ideas"),
+    "/new-year-resolution-ideas/": ("100 New Year resolution ideas", "Pick one and make it stick in 2027"),
+    "/habit-tracker-printable/": ("Printable habit tracker", "Build your own monthly sheet for 2027"),
+    "/goal-setting-worksheet/": ("Goal setting worksheet", "Fill it in, then print one clear page"),
+    "/morning-affirmations/": ("Morning affirmations", "Short lines to start your day calmly"),
+    "/self-love-affirmations/": ("Self-love affirmations", "Kind words for worth, body and boundaries"),
+    "/money-affirmations/": ("Money affirmations", "Calm money lines, each with a real action"),
 }
 RELATED = {
     "/369-method/": ["/369-method/examples/", "/affirmation-wallpaper/", "/369-manifestation-journal/", "/faq/"],
@@ -207,28 +227,51 @@ RELATED = {
     "/369-method/vs-55x5/": ["/369-method/", "/369-method/tracker/", "/best-369-method-apps/", "/faq/"],
     "/369-method/tesla/": ["/369-meaning/", "/angel-number-calculator/", "/numerology-calculator/", "/369-method/"],
     "/369-method/tracker/": ["/369-method/examples/", "/affirmation-wallpaper/", "/angel-number-calculator/", "/new-year-manifestation-challenge/"],
-    "/369-meaning/": ["/angel-number-calculator/", "/numerology-calculator/", "/369-method/tesla/", "/369-method/examples/"],
+    "/369-meaning/": ["/angel-numbers/369/", "/angel-numbers/", "/369-method/tesla/", "/369-method/examples/"],
     "/369-manifestation-journal/": ["/journal-prompt-generator/", "/gratitude-journal-prompts/", "/letter-to-future-self/", "/best-369-method-apps/"],
     "/scripting-manifestation/": ["/letter-to-future-self/", "/journal-prompt-generator/", "/gratitude-journal-prompts/", "/369-manifestation-journal/"],
-    "/new-year-manifestation-challenge/": ["/word-of-the-year/", "/vision-board-maker/", "/letter-to-future-self/", "/numerology-calculator/"],
+    "/new-year-manifestation-challenge/": ["/word-of-the-year/", "/new-year-resolution-ideas/", "/vision-board-templates/", "/personal-year-number-calculator/"],
     "/best-369-method-apps/": ["/369-manifestation-journal/", "/369-method/", "/369-method/tracker/", "/faq/"],
     "/faq/": ["/369-method/", "/angel-number-calculator/", "/best-369-method-apps/", "/tools/"],
     "/about/": ["/books/", "/tools/", "/guides/", "/369-method/tesla/"],
     "/books/": ["/369-method/", "/scripting-manifestation/", "/369-manifestation-journal/", "/tools/"],
     "/tools/": ["/369-method/", "/369-meaning/", "/guides/", "/books/"],
-    "/vision-board-maker/": ["/word-of-the-year/", "/new-year-manifestation-challenge/", "/369-method/money/"],
+    "/vision-board-maker/": ["/vision-board-templates/", "/word-of-the-year/", "/new-year-manifestation-challenge/"],
     "/affirmation-wallpaper/": ["/word-of-the-year/", "/369-method/examples/", "/angel-number-calculator/"],
-    "/affirmation-generator/": ["/369-method/examples/", "/369-method/money/", "/369-method/love/"],
+    "/affirmation-generator/": ["/morning-affirmations/", "/money-affirmations/", "/self-love-affirmations/"],
     "/letter-to-future-self/": ["/scripting-manifestation/", "/new-year-manifestation-challenge/", "/369-method/love/"],
     "/journal-prompt-generator/": ["/gratitude-journal-prompts/", "/scripting-manifestation/", "/369-manifestation-journal/"],
-    "/angel-number-calculator/": ["/369-meaning/", "/numerology-calculator/", "/369-method/tesla/"],
+    "/angel-number-calculator/": ["/angel-numbers/", "/369-meaning/", "/life-path-number-calculator/"],
     "/word-of-the-year/": ["/new-year-manifestation-challenge/", "/369-method/", "/vision-board-maker/"],
-    "/numerology-calculator/": ["/angel-number-calculator/", "/369-meaning/", "/word-of-the-year/"],
+    "/numerology-calculator/": ["/life-path-number-calculator/", "/personal-year-number-calculator/", "/name-numerology-calculator/"],
     "/gratitude-journal-prompts/": ["/scripting-manifestation/", "/369-manifestation-journal/", "/369-method/"],
+    "/angel-numbers/": ["/angel-number-calculator/", "/369-meaning/", "/life-path-number-calculator/"],
+    "/personal-year-number-calculator/": ["/word-of-the-year/", "/new-year-manifestation-challenge/", "/new-year-resolution-ideas/"],
+    "/name-numerology-calculator/": ["/life-path-number-calculator/", "/personal-year-number-calculator/", "/angel-numbers/"],
+    "/life-path-number-calculator/": ["/personal-year-number-calculator/", "/name-numerology-calculator/", "/angel-numbers/"],
+    "/vision-board-templates/": ["/vision-board-maker/", "/word-of-the-year/", "/new-year-resolution-ideas/"],
+    "/new-year-resolution-ideas/": ["/new-year-manifestation-challenge/", "/goal-setting-worksheet/", "/habit-tracker-printable/"],
+    "/habit-tracker-printable/": ["/369-method/tracker/", "/goal-setting-worksheet/", "/new-year-resolution-ideas/"],
+    "/goal-setting-worksheet/": ["/habit-tracker-printable/", "/new-year-resolution-ideas/", "/vision-board-templates/"],
+    "/morning-affirmations/": ["/affirmation-wallpaper/", "/self-love-affirmations/", "/369-method/examples/"],
+    "/self-love-affirmations/": ["/369-method/love/", "/morning-affirmations/", "/gratitude-journal-prompts/"],
+    "/money-affirmations/": ["/369-method/money/", "/morning-affirmations/", "/vision-board-templates/"],
+    "/angel-numbers/111/": ["/angel-numbers/", "/369-method/", "/life-path-number-calculator/"],
+    "/angel-numbers/222/": ["/angel-numbers/", "/369-method/", "/life-path-number-calculator/"],
+    "/angel-numbers/333/": ["/angel-numbers/", "/369-method/", "/life-path-number-calculator/"],
+    "/angel-numbers/444/": ["/angel-numbers/", "/369-method/", "/life-path-number-calculator/"],
+    "/angel-numbers/555/": ["/angel-numbers/", "/369-method/", "/life-path-number-calculator/"],
+    "/angel-numbers/777/": ["/angel-numbers/", "/369-method/", "/life-path-number-calculator/"],
+    "/angel-numbers/999/": ["/angel-numbers/", "/369-method/", "/life-path-number-calculator/"],
+    "/angel-numbers/1010/": ["/angel-numbers/", "/369-method/", "/life-path-number-calculator/"],
+    "/angel-numbers/1111/": ["/angel-numbers/", "/369-method/", "/life-path-number-calculator/"],
+    "/angel-numbers/1212/": ["/angel-numbers/", "/369-method/", "/life-path-number-calculator/"],
+    "/angel-numbers/369/": ["/369-meaning/", "/369-method/", "/angel-numbers/"],
 }
 TOOL_PAGES = {"/vision-board-maker/", "/affirmation-wallpaper/", "/affirmation-generator/",
               "/letter-to-future-self/", "/journal-prompt-generator/", "/angel-number-calculator/",
-              "/word-of-the-year/", "/numerology-calculator/", "/gratitude-journal-prompts/"}
+              "/word-of-the-year/", "/numerology-calculator/", "/gratitude-journal-prompts/",
+              "/angel-numbers/", "/personal-year-number-calculator/", "/name-numerology-calculator/", "/life-path-number-calculator/", "/vision-board-templates/", "/new-year-resolution-ideas/", "/habit-tracker-printable/", "/goal-setting-worksheet/", "/morning-affirmations/", "/self-love-affirmations/", "/money-affirmations/", "/angel-numbers/111/", "/angel-numbers/222/", "/angel-numbers/333/", "/angel-numbers/444/", "/angel-numbers/555/", "/angel-numbers/777/", "/angel-numbers/999/", "/angel-numbers/1010/", "/angel-numbers/1111/", "/angel-numbers/1212/", "/angel-numbers/369/"}
 RELATED_RE = re.compile(r"\s*<!-- related -->.*?<!-- /related -->", re.S)
 
 
@@ -256,6 +299,51 @@ def apply_related(s, cur):
     if block and "</main>" in s:
         s = s.replace("\n  </main>", block + "\n  </main>", 1)
     return s
+
+
+# ---------------------------------------------------------------------------
+# "Personalise it for me" AI panel (assets/ai.js, Claude Haiku 5.5 via 369-journal-api /api/web-ai).
+# path -> (mode, extra data attributes). layout.py inserts it after each page's tool.
+AI_V = "20261122a"
+_ANGEL = ["111", "222", "333", "444", "555", "777", "999", "1010", "1111", "1212", "369"]
+AI_PAGES = {
+    "/affirmation-generator/": ("affirm", {}),
+    "/morning-affirmations/": ("affirm", {"area": "morning"}),
+    "/self-love-affirmations/": ("affirm", {"area": "selflove"}),
+    "/money-affirmations/": ("affirm", {"area": "money"}),
+    "/angel-number-calculator/": ("angel", {}),
+    "/angel-numbers/": ("angel", {}),
+    **{f"/angel-numbers/{n}/": ("angel", {"number": n}) for n in _ANGEL},
+    "/numerology-calculator/": ("numerology", {}),
+    "/life-path-number-calculator/": ("numerology", {}),
+    "/name-numerology-calculator/": ("numerology", {}),
+    "/personal-year-number-calculator/": ("numerology", {}),
+    "/new-year-resolution-ideas/": ("resolution", {"kind": "resolution"}),
+    "/goal-setting-worksheet/": ("resolution", {"kind": "goal"}),
+    "/scripting-manifestation/": ("scripting", {"book": "scripting"}),
+    "/journal-prompt-generator/": ("scripting", {"book": "scripting"}),
+    "/letter-to-future-self/": ("letter", {}),
+}
+AI_RE = re.compile(r"\s*<!-- ai -->.*?<!-- /ai -->", re.S)
+AI_HEAD_RE = re.compile(r"\s*<!-- ai-head -->.*?<!-- /ai-head -->", re.S)
+
+
+def apply_ai(s, cur):
+    s = AI_RE.sub("", s)
+    s = AI_HEAD_RE.sub("", s)
+    if cur not in AI_PAGES:
+        return s
+    mode, extra = AI_PAGES[cur]
+    attrs = "".join(f' data-{k}="{v}"' for k, v in extra.items())
+    panel = f'\n    <!-- ai -->\n    <section class="ai print-hide" data-ai="{mode}"{attrs}></section>\n    <!-- /ai -->'
+    for anchor in ('\n  <section class="tool-next', '\n    <article class="narrow prose'):
+        if anchor in s:
+            s = s.replace(anchor, panel + anchor, 1)
+            break
+    head = (f'\n  <!-- ai-head -->\n  <link rel="stylesheet" href="/assets/ai.css?v={AI_V}">\n'
+            f'  <script src="/assets/ai.js?v={AI_V}" defer></script>\n  <!-- /ai-head -->')
+    return s.replace("\n</head>", head + "\n</head>", 1)
+
 
 if __name__ == "__main__":
     main()

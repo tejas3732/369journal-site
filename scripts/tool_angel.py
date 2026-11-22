@@ -151,6 +151,8 @@ BIRTH_TEXT = {
     "33": "33 is kept as a \"master number\" and is often described as caring, generous and teacherly.",
 }
 
+PAGES = {"111", "222", "333", "444", "555", "777", "999", "1010", "1111", "1212", "369"}
+
 POPULAR = ["111", "222", "333", "444", "555", "777", "888", "999", "1111", "1212", "369"]
 
 DATA = {
@@ -173,9 +175,9 @@ FAQ = [
 
 def popular_table():
     rows = "".join(
-        f'<tr><th scope="row"><a href="#n={n}" data-n="{n}">{n}</a></th><td>{", ".join(NUMBERS[n][0])}</td><td>{html.escape(NUMBERS[n][3])}</td></tr>'
+        f'<tr><th scope="row"><a href="#n={n}" data-n="{n}">{n}</a></th><td>{", ".join(NUMBERS[n][0])}</td><td>{html.escape(NUMBERS[n][3])}</td><td>{f'<a href="/angel-numbers/{n}/">{n} meaning</a>' if n in PAGES else ""}</td></tr>'
         for n in ["000", "111", "222", "333", "444", "555", "666", "777", "888", "999", "1010", "1111", "1212", "1234", "369"])
-    return f'<div class="table-wrap"><table><thead><tr><th scope="col">Number</th><th scope="col">Commonly associated with</th><th scope="col">Affirmation to try</th></tr></thead><tbody>{rows}</tbody></table></div>'
+    return f'<div class="table-wrap"><table><thead><tr><th scope="col">Number</th><th scope="col">Commonly associated with</th><th scope="col">Affirmation to try</th><th scope="col">Full page</th></tr></thead><tbody>{rows}</tbody></table></div>'
 
 
 def tool():
@@ -234,7 +236,7 @@ def tool():
       </ol>
 
       <h2 id="popular">Popular angel numbers and their meanings</h2>
-      <p>Tap any number to open its full meaning in the tool above.</p>
+      <p>Tap any number to open its meaning in the tool above, or read the full page for love, money and what to do when you see it. All of them are on the <a href="/angel-numbers/">angel numbers page</a>.</p>
 {popular_table()}
       <p>Keep seeing 369? Read <a href="/369-meaning/">what 369 means</a>, including the 369 method and where the Tesla story comes from.</p>"""
 
