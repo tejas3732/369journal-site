@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <title>The 369 Method on Amazon | 369 Journal</title>
+  <link rel="canonical" href="https://369journal.app/books/">
+  <meta name="theme-color" content="#faf6f0">
+  <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48">
+  <noscript><meta http-equiv="refresh" content="0; url=https://369-journal-api.vercel.app/api/book?b=369&amp;f=paperback&amp;src=short_nojs"></noscript>
+  <style>
+    html,body{margin:0;height:100%;background:#faf6f0;color:#1f2a55;font-family:Georgia,"Times New Roman",serif}
+    main{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px;box-sizing:border-box;text-align:center}
+    img{width:150px;border-radius:4px;box-shadow:0 18px 40px rgba(31,42,85,.25)}
+    h1{font-weight:400;font-size:26px;margin:6px 0 0}
+    p{margin:0;color:#5d6488;font-family:system-ui,-apple-system,sans-serif;font-size:15px}
+    a.btn{display:inline-block;margin-top:6px;padding:12px 26px;border-radius:999px;background:#1f2a55;color:#faf6f0;text-decoration:none;font-family:system-ui,-apple-system,sans-serif;font-weight:600;font-size:15px}
+    a.more{color:#9a6b1f;font-family:system-ui,-apple-system,sans-serif;font-size:14px}
+  </style>
+</head>
+<body>
+<main>
+  <img src="/assets/img/books/the-369-method.jpg" alt="The 369 Method book cover">
+  <h1>Opening The 369 Method on Amazon…</h1>
+  <p>Taking you to your country’s Amazon store.</p>
+  <a class="btn" id="go" href="https://369-journal-api.vercel.app/api/book?b=369&amp;f=paperback&amp;src=short_link">Continue to Amazon</a>
+  <a class="more" href="/books/">See both books</a>
+</main>
+<script>
+(function () {
+  // Short link → the book redirect API, which picks the reader's own Amazon store and logs the tap.
+  // India, Brazil and Mexico have no KDP paperback, so send those readers to the Kindle edition.
+  var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+  var kindleOnly = /^(Asia\/(Kolkata|Calcutta)|America\/(Sao_Paulo|Fortaleza|Recife|Bahia|Belem|Manaus|Cuiaba|Campo_Grande|Porto_Velho|Boa_Vista|Rio_Branco|Araguaina|Maceio|Santarem|Noronha|Mexico_City|Monterrey|Merida|Cancun|Tijuana|Chihuahua|Hermosillo|Mazatlan|Bahia_Banderas|Matamoros|Ojinaga))$/.test(tz);
+  var q = location.search.replace(/^\?/, '');
+  var m = q.match(/(?:^|&)s=([a-z0-9_]{1,32})(?:&|$)/) || q.match(/^([a-z0-9_]{1,32})$/);
+  var ref = document.referrer || '';
+  var src = m ? m[1] : /youtube\.com|youtu\.be/.test(ref) ? 'youtube' : /instagram\.com/.test(ref) ? 'instagram'
+    : /tiktok\.com/.test(ref) ? 'tiktok' : /pinterest\./.test(ref) ? 'pinterest' : 'short_link';
+  var url = 'https://369-journal-api.vercel.app/api/book?b=369&f=' + (kindleOnly ? 'kindle' : 'paperback') + '&src=' + src;
+  document.getElementById('go').href = url;
+  location.replace(url);
+})();
+</script>
+</body>
+</html>
